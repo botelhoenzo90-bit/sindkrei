@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   ArrowRight, Award, BookOpen, Check, ChevronDown, ChevronLeft,
   ChevronRight, FileCheck2, Headphones, MessageCircle, ShieldCheck,
-  Sparkles, Video, BookMarked, ClipboardCheck, Layers3, Scale
+  Sparkles, Video, BookMarked, ClipboardCheck, Layers3, Scale, TrendingUp
 } from "lucide-react";
 
 const whatsapp = "https://wa.me/556186194180?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20Mentoria%202%C2%AA%20Fase%20OAB%20-%20Direito%20do%20Trabalho";
