@@ -84,33 +84,130 @@ function Index() {
         @media(max-width:900px){.nav-links{gap:14px}.nav-links a{font-size:12px}.nav-cta{padding:12px 15px;font-size:12px}.hero-grid{grid-template-columns:1fr .8fr;gap:15px}.hero{padding:70px 0}.hero-visual{min-height:360px}.hero-art{border-radius:22px}.trust-grid{grid-template-columns:repeat(2,1fr)}.trust-item:nth-child(2){border-right:0}.trust-item:nth-child(-n+2){border-bottom:1px solid #edf0f4}.benefit-grid{grid-template-columns:repeat(2,1fr)}.method-grid{grid-template-columns:repeat(3,1fr)}.intro-grid,.prof-grid{gap:35px}.module-track{display:flex}.extra-box{grid-template-columns:1fr}.sim-grid{gap:30px}}
         @media(max-width:680px){.container{width:min(100% - 34px,540px)}.logo-slot{width:190px;height:62px;margin-bottom:22px}.testimonial-card{grid-template-columns:1fr;justify-items:center;text-align:center;padding:25px 20px;gap:18px}.testimonial-photo-placeholder{width:120px;height:120px;font-size:30px}.testimonial-content p{font-size:13px}.hero{padding:52px 0 62px}.hero-grid{grid-template-columns:1fr;gap:26px}.hero h1{font-size:43px;max-width:520px}.hero-sub{font-size:15px;line-height:1.7}.hero-actions{display:grid}.hero-actions .btn{width:100%}.hero-proof{gap:11px 16px;font-size:11px}.hero-visual{min-height:0;padding:0 10px 10px}.hero-art{width:min(100%,390px);border-radius:20px}.floating-tag{left:0;bottom:0;padding:12px 14px;font-size:11px}.trust-grid{transform:translateY(-17px);grid-template-columns:1fr 1fr}.trust-item{padding:16px 12px;gap:9px}.trust-icon{width:35px;height:35px;flex-basis:35px}.trust-item b{font-size:11px}.trust-item small{font-size:10px}.trust-item:nth-child(2){border-right:0}.trust-item:nth-child(3){border-bottom:0}.trust-item:nth-child(4){border-bottom:0}
           section{padding:70px 0}.intro{padding-top:28px}.intro-grid,.prof-grid,.sim-grid{grid-template-columns:1fr;gap:30px}.intro-visual{min-height:280px;padding:22px}.intro-quote{padding:20px}.intro-quote p{font-size:19px}.intro-copy h2,.sim-copy h2,.prof-copy h2{font-size:32px}.benefit-grid{grid-template-columns:1fr 1fr;gap:10px}.benefit-card{padding:20px 16px}.benefit-card h3{font-size:14px}.benefit-card p{font-size:11px}.benefit-icon{width:41px;height:41px;margin-bottom:16px}.carousel-head{align-items:flex-end}.carousel-head .section-title{margin:0}.carousel-head .section-title h2{font-size:30px}.carousel-controls{gap:6px}.circle-btn{width:38px;height:38px}.module-track{display:flex}.module-card{min-height:175px}.extra-box{padding:22px}.extra-box h3{font-size:20px}.extra-chip{font-size:10px}.method-grid{grid-template-columns:1fr 1fr}.method-card{padding:18px 15px}.method-card:before{margin-bottom:15px}.method-card h3{font-size:13px}.method-card p{font-size:11px}.deep-grid{grid-template-columns:1fr}.deep-card{padding:22px;gap:13px}.simulator{padding:68px 0}.sim-panel{padding:27px 22px}.sim-number{font-size:65px}.prof-photo-wrap{max-width:420px;margin:0 auto}.review-card{padding:26px 20px;min-height:0;align-items:flex-start}.review-card h3{font-size:17px}.offer-card{padding:27px 20px;border-radius:22px}.pricing-panel{padding:19px 14px}.pricing-discounts{gap:9px}.pricing-discounts>div{padding:13px 8px}.pricing-discounts strong{font-size:21px}.offer-grid{grid-template-columns:1fr;gap:13px}.offer-bottom{align-items:stretch;flex-direction:column}.offer-bottom .btn{width:100%}.guarantee{padding:14px}.final-cta{padding:70px 0}.final-cta h2{font-size:34px}.footer-inner{align-items:flex-start;flex-direction:column}.whatsapp-float{width:55px;height:55px;right:15px;bottom:15px}}
-        .site-shell{text-align:center}.container{width:min(1080px,calc(100% - 44px))}
-        .hero-grid{grid-template-columns:1fr;justify-items:center;text-align:center;max-width:900px}.hero-copy{max-width:800px;margin:0 auto}.hero-sub{margin-left:auto;margin-right:auto}
-        .hero-actions,.hero-proof{justify-content:center}.hero-visual{min-height:0;width:100%;margin-top:22px}.hero-art{max-width:360px}.floating-tag{left:calc(50% - 205px)}
-        .intro-grid,.prof-grid,.sim-grid{grid-template-columns:1fr;justify-items:center;text-align:center;max-width:850px}.intro-visual,.prof-photo-wrap,.sim-panel{width:100%;max-width:600px}.intro-visual{justify-content:center;text-align:left}
-        .pain-list,.sim-points{max-width:650px;margin-left:auto;margin-right:auto;text-align:left}.benefit-card,.method-card,.deep-card{text-align:center}.deep-card{justify-content:center}
-        .carousel-head{justify-content:center;text-align:center}.carousel-head .section-title{margin-left:auto;margin-right:auto}
-        .module-window{width:100vw;margin-left:calc(50% - 50vw);border-radius:0;overflow:hidden}.module-track{display:flex;width:max-content;animation:moduleMarquee 48s linear infinite}
-        .module-card{flex:0 0 300px;width:300px;min-height:190px;margin:0 10px;text-align:center}.module-top{justify-content:center;gap:12px}
+        /* AJUSTE GLOBAL: alinhamento, espaçamentos e identidade dos botões */
+        .site-shell{width:100%;overflow:hidden;background:#fff;color:var(--ink)}
+        .site-shell section{width:100%;padding:88px 0}
+        .site-shell .container{width:min(1120px,calc(100% - 48px));margin-left:auto;margin-right:auto}
+        .site-shell .section-title{width:100%;max-width:760px;margin:0 auto 42px;text-align:center}
+        .site-shell .section-title h2{margin-left:auto;margin-right:auto}
+        .site-shell .section-title p{margin:16px auto 0}
+        .site-shell .hero{padding:82px 0 88px}
+        .site-shell .hero-grid{display:grid;grid-template-columns:1fr;justify-items:center;gap:28px;max-width:900px;margin:0 auto;text-align:center}
+        .site-shell .hero-copy{width:100%;max-width:820px;margin:0 auto;text-align:center}
+        .site-shell .hero-kicker{margin-left:auto;margin-right:auto}
+        .site-shell .hero h1{max-width:850px;margin:22px auto 18px}
+        .site-shell .hero-sub{max-width:700px;margin:0 auto 26px}
+        .site-shell .hero-actions,.site-shell .hero-proof{justify-content:center}
+        .site-shell .hero-visual{width:100%;min-height:0;margin:6px auto 0;justify-content:center}
+        .site-shell .hero-art{width:min(100%,390px);max-width:390px}
+        .site-shell .floating-tag{left:calc(50% - 215px)}
+        .site-shell .trust-grid{width:100%;margin-left:auto;margin-right:auto}
+        .site-shell .intro-grid,.site-shell .prof-grid,.site-shell .sim-grid{display:grid;grid-template-columns:1fr;justify-items:center;gap:34px;max-width:900px;margin:0 auto;text-align:center}
+        .site-shell .intro-visual,.site-shell .prof-photo-wrap,.site-shell .sim-panel{width:100%;max-width:620px;margin-left:auto;margin-right:auto}
+        .site-shell .intro-copy,.site-shell .prof-copy,.site-shell .sim-copy{width:100%;max-width:780px;margin:0 auto;text-align:center}
+        .site-shell .intro-copy h2,.site-shell .prof-copy h2,.site-shell .sim-copy h2{max-width:760px;margin:0 auto 18px}
+        .site-shell .intro-copy>p,.site-shell .prof-copy>p,.site-shell .sim-copy>p{max-width:740px;margin:0 auto 15px}
+        .site-shell .pain-list,.site-shell .sim-points{width:min(100%,650px);margin:24px auto;text-align:left}
+        .site-shell .benefit-grid{width:100%;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+        .site-shell .benefit-card,.site-shell .method-card{height:100%;text-align:center}
+        .site-shell .benefit-icon{margin-left:auto;margin-right:auto}
+        .site-shell .curriculum .carousel-head{display:block;margin:0 auto 30px;text-align:center}
+        .site-shell .carousel-head .section-title{max-width:780px;margin:0 auto;text-align:center}
+        .site-shell .carousel-head .section-title p{margin:16px auto 0}
+        .site-shell .module-window{width:100vw;max-width:none;margin-left:calc(50% - 50vw);overflow:hidden;border-radius:0;padding:2px 0}
+        .site-shell .module-track{display:flex;width:max-content;gap:0;animation:moduleMarquee 48s linear infinite;transition:none}
+        .site-shell .module-window:hover .module-track{animation-play-state:paused}
+        .site-shell .module-card{box-sizing:border-box;flex:0 0 300px;width:300px;min-height:195px;margin:0 10px;text-align:center}
+        .site-shell .module-top{justify-content:center;gap:12px}
         @keyframes moduleMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-        .extra-box{text-align:center}.extra-list{justify-content:center}.sim-panel{text-align:center}.prof-copy{max-width:760px;margin:0 auto}
-        .testimonial-carousel{width:100vw;max-width:none;margin-left:calc(50% - 50vw);overflow:hidden;padding:10px 0 25px}
-        .testimonial-track{display:flex;gap:22px;width:max-content;animation:reviewMarquee 105s linear infinite}
-        .testimonial-card{flex:0 0 520px;width:520px;min-height:280px;grid-template-columns:130px 1fr;gap:22px;padding:25px;text-align:left}
-        .testimonial-photo-placeholder{width:112px;height:112px;flex-basis:112px;font-size:34px}
+        .site-shell .extra-box{width:100%;max-width:1000px;margin:30px auto 0;text-align:center}
+        .site-shell .extra-list{justify-content:center}
+        .site-shell .method-grid{width:100%;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+        .site-shell .deep-grid{width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+        .site-shell .deep-card{height:100%;align-items:flex-start;text-align:left}
+        .site-shell .deep-card .benefit-icon{margin:0;flex:0 0 48px}
+        .site-shell .sim-panel{text-align:center}
+        .site-shell .sim-tags{justify-content:center}
+        .site-shell .prof-photo-wrap{max-width:470px}
+        .site-shell .prof-copy{max-width:780px}
+        .site-shell .reviews .section-title{max-width:780px}
+        .site-shell .testimonial-carousel{width:100vw;max-width:none;margin:0 0 0 calc(50% - 50vw);overflow:hidden;padding:10px 0 24px}
+        .site-shell .testimonial-track{display:flex;align-items:stretch;gap:22px;width:max-content;animation:reviewMarquee 105s linear infinite}
+        .site-shell .testimonial-carousel:hover .testimonial-track{animation-play-state:paused}
+        .site-shell .testimonial-card{box-sizing:border-box;flex:0 0 520px;width:520px;min-height:280px;margin:0;padding:25px;grid-template-columns:112px minmax(0,1fr);gap:22px;text-align:left}
+        .site-shell .testimonial-photo-placeholder{width:104px;height:104px;flex-basis:104px;font-size:34px}
         @keyframes reviewMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-        .section-cta{display:flex;justify-content:center;margin:32px auto 0}
-        .offer-card{max-width:790px;padding:32px}.offer-head{max-width:650px;margin:0 auto 25px}.offer-head h2{font-size:clamp(27px,3vw,36px)}
-        .offer-grid{gap:10px 22px}.pricing-panel{max-width:620px;margin:24px auto 0;padding:20px}.pricing-main{padding-bottom:16px}
-        .pricing-main strong{font-size:clamp(34px,4vw,46px)}.pricing-discounts{margin-top:15px}
-        .offer-bottom{justify-content:center;flex-wrap:wrap;text-align:center;margin-top:22px;padding-top:20px}.offer-bottom>div{width:100%}
-        .guarantee-outside{max-width:790px;margin:18px auto 0;background:rgba(255,255,255,.1);border-color:rgba(234,219,197,.35);text-align:left}
-        .guarantee-outside b{color:#f4dfc3}.guarantee-outside small{color:#e0d5df}.faq-list{max-width:760px;text-align:left}.final-cta .btn{margin:0 auto}
-        @media(max-width:680px){.container{width:calc(100% - 30px)}.hero-grid{grid-template-columns:1fr}.hero h1{margin-left:auto;margin-right:auto}.hero-visual{padding:0 10px 10px}.floating-tag{left:0}
-          .module-card{flex-basis:260px;width:260px;min-height:180px;padding:20px}.testimonial-track{animation-duration:125s}
-          .testimonial-card{flex-basis:310px;width:310px;grid-template-columns:1fr;justify-items:center;text-align:center;padding:22px 18px;min-height:350px}
-          .testimonial-photo-placeholder{width:88px;height:88px;flex-basis:88px;font-size:28px}.offer-card{padding:24px 17px}.offer-grid{grid-template-columns:1fr;text-align:left}
-          .pricing-discounts{gap:8px}.pricing-discounts>div{padding:12px 7px}.pricing-discounts strong{font-size:20px}.offer-bottom .btn{width:100%}.guarantee-outside{padding:14px}}
+        .site-shell .section-cta{display:flex;justify-content:center;align-items:center;width:100%;margin:30px auto 0}
+        .site-shell .offer-card{width:100%;max-width:820px;margin:0 auto;padding:34px}
+        .site-shell .offer-head{max-width:680px;margin:0 auto 28px;text-align:center}
+        .site-shell .offer-head h2{font-size:clamp(27px,3vw,36px)}
+        .site-shell .offer-grid{max-width:700px;margin:0 auto;gap:12px 24px;text-align:left}
+        .site-shell .pricing-panel{width:100%;max-width:620px;margin:26px auto 0;padding:22px}
+        .site-shell .pricing-main strong{font-size:clamp(34px,4vw,46px)}
+        .site-shell .pricing-discounts{margin-top:16px}
+        .site-shell .offer-bottom{justify-content:center;flex-wrap:wrap;text-align:center;margin-top:22px;padding-top:22px}
+        .site-shell .offer-bottom>div{width:100%}
+        .site-shell .guarantee-outside{display:flex;width:100%;max-width:820px;margin:18px auto 0;padding:18px 22px;background:rgba(255,255,255,.09);border:1px solid rgba(234,219,197,.35);text-align:left}
+        .site-shell .guarantee-outside b{color:#f4dfc3}
+        .site-shell .guarantee-outside small{color:#e0d5df}
+        .site-shell .faq-list{width:100%;max-width:820px;margin:0 auto;text-align:left}
+        .site-shell .final-cta .container{text-align:center}
+        .site-shell footer .footer-inner{width:100%;align-items:center}
+        /* Paleta única dos botões: vinho, azul-marinho e branco */
+        .site-shell .btn{min-height:48px;padding:14px 23px;border:1px solid transparent;border-radius:999px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:800;line-height:1.2;letter-spacing:0;box-shadow:none}
+        .site-shell .btn-primary{background:#65143b!important;color:#fff!important;border-color:#65143b!important}
+        .site-shell .btn-primary:hover{background:#7b1d49!important;border-color:#7b1d49!important;box-shadow:0 9px 22px rgba(101,20,59,.22)}
+        .site-shell .btn-dark{background:#07172d!important;color:#fff!important;border-color:#07172d!important}
+        .site-shell .btn-dark:hover{background:#102844!important;border-color:#102844!important;box-shadow:0 9px 22px rgba(7,23,45,.2)}
+        .site-shell .btn-outline{background:rgba(255,255,255,.06)!important;color:#fff!important;border:1px solid rgba(255,255,255,.55)!important}
+        .site-shell .btn-outline:hover{background:rgba(255,255,255,.14)!important;border-color:#eadbc5!important}
+        .site-shell .btn-white{background:#fff!important;color:#07172d!important;border:1px solid #fff!important}
+        .site-shell .btn-white:hover{background:#f5f7fa!important}
+        .site-shell .circle-btn,.site-shell .testimonial-arrow{background:#102844;color:#fff;border-color:#102844}
+        .site-shell .circle-btn:hover,.site-shell .testimonial-arrow:hover{background:#65143b;color:#fff;border-color:#65143b}
+        .site-shell .whatsapp-float{background:#20c66a!important;color:#fff!important}
+        @media(max-width:900px){
+          .site-shell section{padding:76px 0}
+          .site-shell .container{width:calc(100% - 40px)}
+          .site-shell .benefit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+          .site-shell .method-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+          .site-shell .deep-grid{grid-template-columns:1fr}
+          .site-shell .hero-grid{grid-template-columns:1fr}
+        }
+        @media(max-width:680px){
+          .site-shell section{padding:66px 0}
+          .site-shell .container{width:calc(100% - 32px)}
+          .site-shell .hero{padding:52px 0 62px}
+          .site-shell .hero h1{font-size:clamp(36px,10vw,44px)}
+          .site-shell .hero-actions{display:grid;width:100%;max-width:420px;margin:0 auto}
+          .site-shell .hero-actions .btn{width:100%}
+          .site-shell .hero-proof{gap:11px 16px}
+          .site-shell .floating-tag{left:0;bottom:0}
+          .site-shell .trust-grid{grid-template-columns:1fr 1fr}
+          .site-shell .intro-grid,.site-shell .prof-grid,.site-shell .sim-grid{grid-template-columns:1fr;gap:28px}
+          .site-shell .intro-visual{min-height:280px;padding:22px}
+          .site-shell .benefit-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+          .site-shell .benefit-card{padding:20px 14px}
+          .site-shell .carousel-head .section-title h2{font-size:30px}
+          .site-shell .module-card{flex-basis:260px;width:260px;min-height:180px;padding:20px}
+          .site-shell .testimonial-track{animation-duration:125s}
+          .site-shell .testimonial-card{flex-basis:310px;width:310px;grid-template-columns:1fr;justify-items:center;text-align:center;padding:22px 18px;min-height:350px}
+          .site-shell .testimonial-photo-placeholder{width:88px;height:88px;flex-basis:88px;font-size:28px}
+          .site-shell .method-grid{grid-template-columns:1fr 1fr}
+          .site-shell .deep-grid{grid-template-columns:1fr}
+          .site-shell .deep-card{padding:22px;gap:13px}
+          .site-shell .offer-card{padding:24px 17px}
+          .site-shell .offer-grid{grid-template-columns:1fr;gap:12px}
+          .site-shell .pricing-panel{padding:19px 14px}
+          .site-shell .pricing-discounts{gap:8px}
+          .site-shell .pricing-discounts>div{padding:12px 7px}
+          .site-shell .pricing-discounts strong{font-size:20px}
+          .site-shell .offer-bottom{align-items:stretch;flex-direction:column}
+          .site-shell .offer-bottom .btn{width:100%}
+          .site-shell .guarantee-outside{padding:14px}
+          .site-shell .footer-inner{align-items:flex-start;flex-direction:column}
+          .site-shell .section-cta .btn{width:min(100%,420px)}
+        }
         @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
       `}</style>
 
