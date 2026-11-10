@@ -9,4 +9,4 @@
 - [x] Colocar as capas enviadas nos módulos 00 a 06.
 - [x] Colocar as capas enviadas nos módulos 07 a 12.
 - [x] Deixar as capas soltas, sem o cartão de texto embaixo.
-- [ ] Capas dos módulos 13 e 14 (aguardando imagens do usuário).
+- [x] Colocar as capas enviadas nos módulos 13 e 14.
