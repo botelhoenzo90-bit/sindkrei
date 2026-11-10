@@ -395,6 +395,11 @@ function Index() {
           .site-shell .hero-actions{grid-row:auto;margin:0 auto}
         }
 
+        /* Capas dos módulos: as imagens enviadas ocupam o topo do cartão. */
+        .site-shell .module-photo-slot{height:230px;padding:0;background:#f2f4f7}
+        .site-shell .module-photo-slot:has(.module-photo):after{display:none}
+        .site-shell .module-photo{width:100%;height:100%;display:block;object-fit:cover;object-position:50% 0}
+
       `}</style>
 
 
