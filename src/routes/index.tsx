@@ -145,7 +145,7 @@ function Index() {
 
       <section className="benefits" id="diferenciais"><div className="container">
         <SectionTitle eyebrow="Sua preparação por inteiro" title="Tudo o que você precisa para treinar com direção" text="Uma jornada organizada para sair da teoria, praticar as peças e desenvolver a escrita exigida na prova."/>
-        <div className="benefit-grid">{benefits.map(({icon:Icon,title,text})=><article className="benefit-card" key={title}><span className="benefit-icon"><Icon size={22}/></span><h3>{title}</h3><p>{text}</p></article>)}<div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div>
+        <div className="benefit-grid">{benefits.map(({icon:Icon,title,text})=><article className="benefit-card" key={title}><span className="benefit-icon"><Icon size={22}/></span><h3>{title}</h3><p>{text}</p></article>)}</div><div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div>
       </div></section>
 
       <section className="curriculum" id="conteudo"><div className="container">
