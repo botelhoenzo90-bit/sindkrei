@@ -412,6 +412,16 @@ function Index() {
         .site-shell .module-photo-slot:has(.module-photo):after{display:none}
         .site-shell .module-photo{width:100%;height:100%;display:block;object-fit:cover;object-position:50% 0}
 
+        /* Capas soltas: só a imagem, sem o cartão de texto embaixo. */
+        .site-shell .module-group{gap:22px;padding-right:22px}
+        .site-shell .module-card{flex:0 0 300px;width:300px;min-height:0;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible}
+        .site-shell .module-card:hover{background:transparent;transform:translateY(-6px)}
+        .site-shell .module-card-photo .module-photo-slot{height:300px;background:transparent;border:0;border-radius:20px;box-shadow:0 22px 46px rgba(0,0,0,.34)}
+        .site-shell .module-card-photo .module-photo{border-radius:20px}
+        .site-shell .module-free-badge{position:absolute;top:14px;left:14px;z-index:2}
+        .site-shell .module-card:not(.module-card-photo){min-height:300px;background:#fff;border:1px solid #e6e8ed;border-radius:20px;box-shadow:0 16px 36px rgba(0,0,0,.18)}
+        @media(max-width:680px){.site-shell .module-card{flex:0 0 252px;width:252px}.site-shell .module-card-photo .module-photo-slot{height:252px}}
+
       `}</style>
 
 
@@ -446,7 +456,7 @@ function Index() {
       </div></section>
 
       <section className="curriculum" id="conteudo"><div className="container">
-        <div className="carousel-head"><SectionTitle light eyebrow="Conteúdo programático" title="Um caminho completo pelas peças de Direito do Trabalho" text="Conheça os módulos da mentoria e veja tudo o que será trabalhado em sua preparação."/></div><div className="module-window"><div className="module-track">{[0,1].map((copy)=><div className="module-group" key={copy} aria-hidden={copy===1}>{modules.map((m)=><article className="module-card" key={`${copy}-${m.n}`}><div className="module-photo-slot">{modulePhotos[m.n] ? <img className="module-photo" src={modulePhotos[m.n]} alt={`Capa do módulo ${m.n}: ${m.title}`} loading="lazy" /> : null}</div><div className="module-body"><div className="module-top"><span className="module-number">MÓDULO {m.n}</span>{m.free&&<span className="free-label">Aula grátis</span>}</div><div className="module-description"><h3>{m.title}</h3><p>{m.detail}</p></div></div></article>)}</div>)}</div></div>
+        <div className="carousel-head"><SectionTitle light eyebrow="Conteúdo programático" title="Um caminho completo pelas peças de Direito do Trabalho" text="Conheça os módulos da mentoria e veja tudo o que será trabalhado em sua preparação."/></div><div className="module-window"><div className="module-track">{[0,1].map((copy)=><div className="module-group" key={copy} aria-hidden={copy===1}>{modules.map((m)=>{const photo=modulePhotos[m.n];return photo?<article className="module-card module-card-photo" key={`${copy}-${m.n}`}><div className="module-photo-slot"><img className="module-photo" src={photo} alt={`Capa do módulo ${m.n}: ${m.title}`} loading="lazy" />{m.free&&<span className="free-label module-free-badge">Aula grátis</span>}</div></article>:<article className="module-card" key={`${copy}-${m.n}`}><div className="module-body"><div className="module-top"><span className="module-number">MÓDULO {m.n}</span>{m.free&&<span className="free-label">Aula grátis</span>}</div><div className="module-description"><h3>{m.title}</h3><p>{m.detail}</p></div></div></article>})}</div>)}</div></div>
         <div className="extra-box"><div className="extra-intro"><span className="eyebrow">CONTEÚDO ESPECIAL · 5 AULAS</span><h3>Um módulo extra para ampliar suas possibilidades de atuação</h3><p>Conheça medidas e ações complementares que enriquecem seu repertório jurídico e ampliam sua visão prática.</p><a className="btn btn-primary" href={whatsapp} target="_blank" rel="noreferrer">Quero conhecer o módulo extra <ArrowRight size={16}/></a><div className="extra-counter"><strong>05</strong><span>aulas complementares</span></div></div><div className="extra-lessons">{extras.map((x,i)=><article className="extra-lesson" key={x}><span className="extra-index">0{i+1}</span><div><strong>{x}</strong><small>Conteúdo complementar</small></div><ArrowRight size={16}/></article>)}</div></div><div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div>
       </div></section>
 
