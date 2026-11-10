@@ -361,6 +361,22 @@ function Index() {
           .site-shell .testimonial-card{flex-basis:280px;width:280px;height:250px;min-height:250px;padding:17px 16px}.site-shell .offer-bottom{align-items:center}
         }
 
+        /* Ajustes finais: estes valores têm prioridade sobre os estilos anteriores. */
+        .site-shell .module-track{gap:0;animation:moduleMarquee 46s linear infinite}
+        .site-shell .testimonial-carousel{width:100vw;max-width:none;margin:0 0 0 calc(50% - 50vw)}
+        .site-shell .testimonial-track{gap:0;animation:reviewMarquee 90s linear infinite}
+        .site-shell .module-window:hover .module-track,.site-shell .testimonial-carousel:hover .testimonial-track{animation-play-state:running}
+        @media(max-width:680px){
+          .site-shell .hero-grid{grid-template-columns:1fr;gap:28px;text-align:center}
+          .site-shell .hero-copy{display:block;text-align:center}
+          .site-shell .hero-kicker{grid-row:auto;justify-self:center;margin:0 auto}
+          .site-shell .hero h1{grid-row:auto;margin:18px auto 16px}
+          .site-shell .hero-sub{grid-row:auto;margin:0 auto 24px}
+          .site-shell .hero-visual{grid-row:auto;width:100%;max-width:360px;min-height:0;margin:0 auto}
+          .site-shell .hero-art{width:100%;max-width:360px;aspect-ratio:4/4.6;object-position:50% 20%}
+          .site-shell .hero-actions{grid-row:auto;margin:0 auto}
+        }
+
       `}</style>
 
 
