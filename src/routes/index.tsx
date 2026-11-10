@@ -426,6 +426,43 @@ function Index() {
         .site-shell .module-card:not(.module-card-photo){min-height:300px;background:#fff;border:1px solid #e6e8ed;border-radius:20px;box-shadow:0 16px 36px rgba(0,0,0,.18)}
         @media(max-width:680px){.site-shell .module-card{flex:0 0 252px;width:252px}.site-shell .module-card-photo .module-photo-slot{height:252px}}
 
+        /* Leitura confortável e depoimentos completos, sem limite de linhas. */
+        .site-shell .nav-links a{font-size:14px}
+        .site-shell .hero-kicker,.site-shell .eyebrow{font-size:12px}
+        .site-shell .hero-sub{font-size:19px}
+        .site-shell .trust-item b{font-size:15px}.site-shell .trust-item small{font-size:12px}
+        .site-shell .section-title p{font-size:17px}
+        .site-shell .intro-copy>p,.site-shell .prof-copy>p{font-size:16px}
+        .site-shell .intro-copy-centered .pain{font-size:15px}
+        .site-shell .benefit-card h3{font-size:18px}.site-shell .benefit-card p{font-size:14px}
+        .site-shell .method-step-label{font-size:10px}.site-shell .method-card p{font-size:14px}
+        .site-shell .deep-card p,.site-shell .feedback-card p{font-size:14px}
+        .site-shell .feedback-card small{font-size:10px}
+        .site-shell .prof-sign span{font-size:13px}
+        .site-shell .offer-line,.site-shell .faq-answer{font-size:14px}
+        .site-shell .faq-question{font-size:15px}.site-shell .guarantee small{font-size:12px}
+        .site-shell .footer-copy,.site-shell .footer-links a{font-size:12px}
+        .site-shell .extra-lesson small{font-size:11px}
+        .site-shell .testimonial-track,.site-shell .testimonial-group{align-items:flex-start}
+        .site-shell .testimonial-card{align-self:flex-start;flex:0 0 400px;width:400px;height:auto;min-height:0;overflow:visible}
+        .site-shell .testimonial-review{display:block;flex:0 0 auto;font-size:14px;line-height:1.75;margin:0 0 18px;overflow:visible;-webkit-line-clamp:unset;-webkit-box-orient:initial}
+        .site-shell .testimonial-author-name small{font-size:12px}
+        @media(max-width:680px){
+          .site-shell .hero-grid{display:grid;grid-template-columns:1fr;gap:0;text-align:center}
+          .site-shell .hero-copy{display:contents}
+          .site-shell .hero-kicker{grid-row:1;justify-self:center;margin:0 auto}
+          .site-shell .hero h1{grid-row:2;margin:18px auto 16px}
+          .site-shell .hero-sub{grid-row:3;font-size:16px;margin:0 auto 20px}
+          .site-shell .hero-visual{grid-row:4;width:100%;max-width:360px;min-height:0;margin:0 auto 24px}
+          .site-shell .hero-actions{grid-row:5;display:grid;width:100%;max-width:420px;margin:0 auto}
+          .site-shell .section-title p{font-size:16px}
+          .site-shell .trust-item b{font-size:12px}.site-shell .trust-item small{font-size:11px}
+          .site-shell .benefit-card h3{font-size:15px}.site-shell .benefit-card p{font-size:13px}
+          .site-shell .method-card p{font-size:13px}
+          .site-shell .testimonial-card{flex-basis:320px;width:320px;height:auto;min-height:0;padding:20px 18px}
+          .site-shell .testimonial-review{font-size:14px;line-height:1.7}
+        }
+
       `}</style>
 
 
@@ -511,7 +548,13 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Mentoria 2ª Fase OAB — Direito do Trabalho | Prof. Sindkrei" },
       { property: "og:description", content: "Estratégia, prática e direcionamento para sua preparação na 2ª fase da OAB." },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://sindkrei.lovable.app/sindkrei-compartilhamento.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Sindkrei — Mentoria 2ª Fase OAB em Direito do Trabalho" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://sindkrei.lovable.app/sindkrei-compartilhamento.png" },
+      { name: "twitter:image:alt", content: "Sindkrei — Mentoria 2ª Fase OAB em Direito do Trabalho" },
     ],
   }),
   component: Index,
