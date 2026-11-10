@@ -10,7 +10,7 @@
 - [x] Colocar as capas enviadas nos módulos 07 a 12.
 - [x] Deixar as capas soltas, sem o cartão de texto embaixo.
 - [x] Colocar as capas enviadas nos módulos 13 e 14.
-- [ ] Colocar a foto da abertura acima dos botões no celular.
-- [ ] Usar a logomarca no favicon e na imagem de compartilhamento.
-- [ ] Exibir os depoimentos sem cortar o texto.
-- [ ] Aumentar os textos pequenos e conferir no computador e no celular.
+- [x] Colocar a foto da abertura acima dos botões no celular.
+- [x] Usar a logomarca no favicon e na imagem de compartilhamento.
+- [x] Exibir os depoimentos sem cortar o texto.
+- [x] Aumentar os textos pequenos e conferir no computador e no celular.
