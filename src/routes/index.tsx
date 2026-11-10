@@ -366,6 +366,8 @@ function Index() {
         .site-shell .testimonial-carousel{width:100vw;max-width:none;margin:0 0 0 calc(50% - 50vw)}
         .site-shell .testimonial-track{gap:0;animation:reviewMarquee 90s linear infinite}
         .site-shell .module-window:hover .module-track,.site-shell .testimonial-carousel:hover .testimonial-track{animation-play-state:running}
+        .site-shell .feedback-footer{flex-direction:column;gap:18px;text-align:center}
+        .site-shell footer .footer-inner{width:min(1120px,calc(100% - 48px));margin-left:auto;margin-right:auto}
         @media(max-width:680px){
           .site-shell .hero-grid{grid-template-columns:1fr;gap:28px;text-align:center}
           .site-shell .hero-copy{display:block;text-align:center}
