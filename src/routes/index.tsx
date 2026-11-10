@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   ArrowRight, Award, BookOpen, Check, ChevronDown, ChevronLeft,
   ChevronRight, FileCheck2, Headphones, MessageCircle, ShieldCheck,
-  Sparkles, Video, BookMarked, ClipboardCheck, Layers3, Scale, TrendingUp
+  Sparkles, Video, BookMarked, ClipboardCheck, Layers3, TrendingUp
 } from "lucide-react";
 import jaquelinePhoto from "@/assets/testimonials/jaqueline.png.asset.json";
 import sueliPhoto from "@/assets/testimonials/sueli.png.asset.json";
@@ -21,6 +21,10 @@ import isabelaPhoto from "@/assets/testimonials/isabela.png.asset.json";
 import daviPhoto from "@/assets/testimonials/davi.png.asset.json";
 import biancaPhoto from "@/assets/testimonials/bianca.png.asset.json";
 import victorPhoto from "@/assets/testimonials/victor.png.asset.json";
+import sindkreiLogo from "@/assets/sindkrei-logotipo-branco.png.asset.json";
+import heroPhoto from "@/assets/sindkrei-apresentacao.jpg.asset.json";
+import professorPhoto from "@/assets/sindkrei-professor.jpg.asset.json";
+import whatsappIcon from "@/assets/whatsapp-flutuante.png.asset.json";
 
 const whatsapp = "https://wa.me/556186194180?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20Mentoria%202%C2%AA%20Fase%20OAB%20-%20Direito%20do%20Trabalho";
 
@@ -232,6 +236,49 @@ function Index() {
         }
         @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
+        /* FOTOS, LOGOMARCA E CARROSSÉIS CONTÍNUOS */
+        .site-shell .hero{padding:38px 0 82px}
+        .site-shell .hero-brand{display:block;width:min(290px,72vw);height:auto;margin:0 0 34px;object-fit:contain}
+        .site-shell .hero-grid{grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);justify-items:stretch;gap:48px;max-width:1120px;text-align:left}
+        .site-shell .hero-copy{max-width:650px;margin:0;text-align:left;align-self:center}
+        .site-shell .hero-kicker{margin:0}
+        .site-shell .hero h1{max-width:650px;margin:22px 0 18px;font-size:clamp(42px,4.8vw,62px)}
+        .site-shell .hero-sub{max-width:610px;margin:0 0 28px}
+        .site-shell .hero-actions{justify-content:center}
+        .site-shell .hero-visual{width:100%;max-width:450px;min-height:520px;margin:0 0 0 auto;align-self:center}
+        .site-shell .hero-art{display:block;width:100%;max-width:450px;aspect-ratio:4/5;object-fit:cover;object-position:50% 24%;border-radius:28px}
+        .site-shell .prof-photo{display:block;width:100%;min-height:0;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;border-radius:18px}
+        .site-shell .footer-brand{display:inline-block;width:230px;max-width:100%;height:auto;margin-bottom:14px}
+        .site-shell .whatsapp-float{padding:0;overflow:hidden;background:transparent!important;box-shadow:0 10px 30px rgba(9,83,48,.28)}
+        .site-shell .whatsapp-float img{display:block;width:100%;height:100%;object-fit:contain}
+        .site-shell .intro-copy>.btn,.site-shell .extra-intro>.btn,.site-shell .final-cta .btn{display:flex;width:fit-content;margin-left:auto;margin-right:auto}
+        .site-shell .module-window,.site-shell .testimonial-carousel{width:100vw;max-width:none;margin-left:calc(50% - 50vw);margin-right:0;overflow:hidden}
+        .site-shell .module-track{gap:0;animation:moduleMarquee 46s linear infinite}
+        .site-shell .module-group{display:flex;flex:none;gap:18px;padding-right:18px}
+        .site-shell .module-group .module-card{margin:0}
+        .site-shell .testimonial-track{gap:0;animation:reviewMarquee 90s linear infinite}
+        .site-shell .testimonial-group{display:flex;flex:none;align-items:stretch;gap:18px;padding-right:18px}
+        .site-shell .module-window:hover .module-track,.site-shell .testimonial-carousel:hover .testimonial-track{animation-play-state:running}
+        @media(max-width:900px){
+          .site-shell .hero-grid{grid-template-columns:minmax(0,1fr) minmax(290px,.8fr);gap:28px}
+          .site-shell .hero h1{font-size:clamp(38px,5.5vw,50px)}
+          .site-shell .hero-visual{min-height:440px}
+        }
+        @media(max-width:680px){
+          .site-shell .hero{padding:30px 0 62px}
+          .site-shell .hero-brand{width:230px;margin:0 auto 30px}
+          .site-shell .hero-grid{display:grid;grid-template-columns:1fr;gap:28px;text-align:center}
+          .site-shell .hero-copy{display:block;text-align:center}
+          .site-shell .hero-kicker{margin:0 auto}
+          .site-shell .hero h1{margin:18px auto 16px;font-size:clamp(36px,10vw,44px)}
+          .site-shell .hero-sub{margin:0 auto 24px}
+          .site-shell .hero-visual{grid-row:auto;width:100%;max-width:360px;min-height:0;margin:0 auto}
+          .site-shell .hero-art{width:100%;max-width:360px;aspect-ratio:4/4.6;object-position:50% 20%}
+          .site-shell .hero-actions{display:grid;width:100%;max-width:420px;margin:0 auto}
+          .site-shell .prof-photo-wrap{max-width:380px}
+          .site-shell .footer-brand{width:205px}
+        }
+
         /* AJUSTES DE LAYOUT E DIREÇÃO VISUAL */
         .site-shell .btn,.site-shell a.btn,.site-shell button.btn{background:#65143b!important;border:1px solid #65143b!important;color:#fff!important;box-shadow:0 8px 22px rgba(101,20,59,.16)!important}
         .site-shell .btn:hover,.site-shell a.btn:hover,.site-shell button.btn:hover{background:#7b1d49!important;border-color:#7b1d49!important;color:#fff!important}
@@ -314,11 +361,29 @@ function Index() {
           .site-shell .testimonial-card{flex-basis:280px;width:280px;height:250px;min-height:250px;padding:17px 16px}.site-shell .offer-bottom{align-items:center}
         }
 
+        /* Ajustes finais: estes valores têm prioridade sobre os estilos anteriores. */
+        .site-shell .module-track{gap:0;animation:moduleMarquee 46s linear infinite}
+        .site-shell .testimonial-carousel{width:100vw;max-width:none;margin:0 0 0 calc(50% - 50vw)}
+        .site-shell .testimonial-track{gap:0;animation:reviewMarquee 90s linear infinite}
+        .site-shell .module-window:hover .module-track,.site-shell .testimonial-carousel:hover .testimonial-track{animation-play-state:running}
+        .site-shell .feedback-footer{flex-direction:column;gap:18px;text-align:center}
+        .site-shell footer .footer-inner{width:min(1120px,calc(100% - 48px));margin-left:auto;margin-right:auto}
+        @media(max-width:680px){
+          .site-shell .hero-grid{grid-template-columns:1fr;gap:28px;text-align:center}
+          .site-shell .hero-copy{display:block;text-align:center}
+          .site-shell .hero-kicker{grid-row:auto;justify-self:center;margin:0 auto}
+          .site-shell .hero h1{grid-row:auto;margin:18px auto 16px}
+          .site-shell .hero-sub{grid-row:auto;margin:0 auto 24px}
+          .site-shell .hero-visual{grid-row:auto;width:100%;max-width:360px;min-height:0;margin:0 auto}
+          .site-shell .hero-art{width:100%;max-width:360px;aspect-ratio:4/4.6;object-position:50% 20%}
+          .site-shell .hero-actions{grid-row:auto;margin:0 auto}
+        }
+
       `}</style>
 
 
       <section className="hero" id="inicio">
-        <div className="container"><div className="logo-slot">ESPAÇO RESERVADO PARA A LOGOMARCA</div></div>
+        <div className="container"><img className="hero-brand" src={sindkreiLogo.url} alt="Sindkrei" /></div>
         <div className="container hero-grid">
           <div className="hero-copy">
             <span className="hero-kicker"><i/> MENTORIA COMPLETA · 2ª FASE OAB</span>
@@ -330,7 +395,7 @@ function Index() {
             </div>
             
           </div>
-          <div className="hero-visual"><div className="hero-glow"/><div className="hero-art hero-portrait" role="img" aria-label="Identidade visual da Mentoria Sindkrei"><div className="portrait-emblem"><Scale size={76}/></div><span className="portrait-kicker">MENTORIA COMPLETA</span><strong>PROF. SINDKREI</strong><small>2ª FASE OAB · DIREITO DO TRABALHO</small><div className="portrait-rule"/></div></div>
+          <div className="hero-visual"><div className="hero-glow"/><img className="hero-art" src={heroPhoto.url} alt="Prof. Sindkrei, professor da Mentoria 2ª Fase OAB" fetchPriority="high" /></div>
         </div>
       </section>
 
@@ -348,7 +413,7 @@ function Index() {
       </div></section>
 
       <section className="curriculum" id="conteudo"><div className="container">
-        <div className="carousel-head"><SectionTitle light eyebrow="Conteúdo programático" title="Um caminho completo pelas peças de Direito do Trabalho" text="Conheça os módulos da mentoria e veja tudo o que será trabalhado em sua preparação."/></div><div className="module-window"><div className="module-track">{[...modules,...modules].map((m,i)=><article className="module-card" key={`${m.n}-${i}`}><div className="module-photo-slot" aria-hidden="true"></div><div className="module-body"><div className="module-top"><span className="module-number">MÓDULO {m.n}</span>{m.free&&<span className="free-label">Aula grátis</span>}</div><div className="module-description"><h3>{m.title}</h3><p>{m.detail}</p></div></div></article>)}</div></div>
+        <div className="carousel-head"><SectionTitle light eyebrow="Conteúdo programático" title="Um caminho completo pelas peças de Direito do Trabalho" text="Conheça os módulos da mentoria e veja tudo o que será trabalhado em sua preparação."/></div><div className="module-window"><div className="module-track">{[0,1].map((copy)=><div className="module-group" key={copy} aria-hidden={copy===1}>{modules.map((m)=><article className="module-card" key={`${copy}-${m.n}`}><div className="module-photo-slot" aria-hidden="true"></div><div className="module-body"><div className="module-top"><span className="module-number">MÓDULO {m.n}</span>{m.free&&<span className="free-label">Aula grátis</span>}</div><div className="module-description"><h3>{m.title}</h3><p>{m.detail}</p></div></div></article>)}</div>)}</div></div>
         <div className="extra-box"><div className="extra-intro"><span className="eyebrow">CONTEÚDO ESPECIAL · 5 AULAS</span><h3>Um módulo extra para ampliar suas possibilidades de atuação</h3><p>Conheça medidas e ações complementares que enriquecem seu repertório jurídico e ampliam sua visão prática.</p><a className="btn btn-primary" href={whatsapp} target="_blank" rel="noreferrer">Quero conhecer o módulo extra <ArrowRight size={16}/></a><div className="extra-counter"><strong>05</strong><span>aulas complementares</span></div></div><div className="extra-lessons">{extras.map((x,i)=><article className="extra-lesson" key={x}><span className="extra-index">0{i+1}</span><div><strong>{x}</strong><small>Conteúdo complementar</small></div><ArrowRight size={16}/></article>)}</div></div><div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div>
       </div></section>
 
@@ -370,11 +435,11 @@ function Index() {
       <section className="simulator"><div className="container"><div className="feedback-heading"><span className="eyebrow">PRÁTICA COM FEEDBACK</span><h2>Seu desempenho evolui quando você entende como melhorar.</h2><p>Você pratica, recebe uma análise individual e descobre exatamente onde ajustar a construção da sua resposta para se aproximar do padrão esperado pela FGV.</p></div><div className="feedback-flow"><article className="feedback-card"><span className="feedback-number">01</span><div className="feedback-icon"><FileCheck2 size={25}/></div><h3>Resolva o simulado</h3><p>Coloque em prática a identificação da peça, os fundamentos e os pedidos.</p><small>EXECUÇÃO</small></article><div className="feedback-connector"><ArrowRight size={22}/></div><article className="feedback-card featured"><span className="feedback-number">02</span><div className="feedback-icon"><ClipboardCheck size={25}/></div><h3>Receba a correção</h3><p>Sua resposta é analisada individualmente, com atenção à estrutura e à fundamentação.</p><small>ANÁLISE</small></article><div className="feedback-connector"><ArrowRight size={22}/></div><article className="feedback-card"><span className="feedback-number">03</span><div className="feedback-icon"><TrendingUp size={25}/></div><h3>Saiba como evoluir</h3><p>Entenda os ajustes necessários e leve os aprendizados para o próximo treino.</p><small>EVOLUÇÃO</small></article></div><div className="feedback-footer"><strong>3 simulados com correção individualizada</strong><a className="btn btn-primary" href={whatsapp} target="_blank" rel="noreferrer">Quero treinar com correção <ArrowRight size={16}/></a></div></div>
       </section>
 
-      <section className="professor"><div className="container prof-grid"><div className="prof-photo-wrap"><div className="prof-photo prof-identity" role="img" aria-label="Marca Sindkrei e mentoria de Direito do Trabalho"><Scale size={86}/><strong>SINDKREI</strong><span>MENTORIA 2ª FASE OAB</span></div></div><div className="prof-copy"><span className="eyebrow">Quem vai te acompanhar</span><h2>Aprenda com o Prof. Sindkrei</h2><p>Na mentoria, o Prof. Sindkrei organiza o estudo de Direito e Processo do Trabalho com foco na aplicação prática: identificação da peça, estrutura, fundamentos, pedidos e treino direcionado à 2ª fase da OAB.</p><p>O objetivo é transformar sua preparação em uma jornada mais clara, estratégica e eficiente — com conteúdo, treino e acompanhamento.</p><div className="prof-sign"><strong>Prof. Sindkrei</strong><span>Mentoria 2ª Fase OAB · Direito do Trabalho</span></div><div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div></div></div></section>
+      <section className="professor"><div className="container prof-grid"><div className="prof-photo-wrap"><img className="prof-photo" src={professorPhoto.url} alt="Prof. Sindkrei de terno e braços cruzados" loading="lazy" /></div><div className="prof-copy"><span className="eyebrow">Quem vai te acompanhar</span><h2>Aprenda com o Prof. Sindkrei</h2><p>Na mentoria, o Prof. Sindkrei organiza o estudo de Direito e Processo do Trabalho com foco na aplicação prática: identificação da peça, estrutura, fundamentos, pedidos e treino direcionado à 2ª fase da OAB.</p><p>O objetivo é transformar sua preparação em uma jornada mais clara, estratégica e eficiente — com conteúdo, treino e acompanhamento.</p><div className="prof-sign"><strong>Prof. Sindkrei</strong><span>Mentoria 2ª Fase OAB · Direito do Trabalho</span></div><div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div></div></div></section>
 
       <section className="reviews" id="avaliacoes"><div className="container">
         <SectionTitle eyebrow="Depoimentos reais" title="Histórias de quem trilhou esse caminho com o Prof. Sindkrei" text="Relatos enviados por alunos sobre suas experiências com as aulas e a preparação em Direito do Trabalho."/>
-        <div className="testimonial-carousel"><div className="testimonial-track">{[...testimonials,...testimonials].map(([name,review],i)=><article className="testimonial-card" key={`${name}-${i}`}><div className="testimonial-stars">★★★★★</div><p className="testimonial-review">“{review}”</p><div className="testimonial-author"><div className="testimonial-photo-placeholder"><img className="testimonial-photo" src={testimonialPhotos[i % testimonials.length]} alt={`Foto de ${name}`} loading="lazy" /></div><div className="testimonial-author-name"><strong>{name}</strong><small>Aluna da mentoria</small></div></div></article>)}</div></div><div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div>
+        <div className="testimonial-carousel"><div className="testimonial-track">{[0,1].map((copy)=><div className="testimonial-group" key={copy} aria-hidden={copy===1}>{testimonials.map(([name,review],i)=><article className="testimonial-card" key={`${copy}-${name}`}><div className="testimonial-stars">★★★★★</div><p className="testimonial-review">“{review}”</p><div className="testimonial-author"><div className="testimonial-photo-placeholder"><img className="testimonial-photo" src={testimonialPhotos[i]} alt={`Foto de ${name}`} loading="lazy" /></div><div className="testimonial-author-name"><strong>{name}</strong><small>Aluna da mentoria</small></div></div></article>)}</div>)}</div></div><div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div>
       </div></section>
 
       <section className="offer" id="garantia"><div className="container"><div className="offer-card"><div className="offer-head"><span className="eyebrow">Sua próxima etapa começa aqui</span><h2>Uma preparação completa para estudar com método, praticar e evoluir.</h2><p>Veja o que faz parte da Mentoria 2ª Fase OAB – Direito do Trabalho.</p></div><div className="pricing-panel"><div className="pricing-main"><span className="pricing-label">INVESTIMENTO NA MENTORIA</span><strong>R$ 997,80</strong><small>em até 6x de R$ 166,30 no cartão</small></div><div className="pricing-discounts"><div><span>Ex-aluno</span><strong>30% OFF</strong><small>R$ 698,46</small></div><div><span>Pagamento à vista</span><strong>20% OFF</strong><small>R$ 798,24</small></div></div></div><div className="offer-grid">
@@ -385,8 +450,8 @@ function Index() {
 
       <section className="final-cta"><div className="container"><span className="eyebrow">Dê o próximo passo</span><h2>Seu caminho até a 2ª fase pode começar hoje.</h2><p>Conheça a Mentoria 2ª Fase OAB – Direito do Trabalho e prepare-se com conteúdo estruturado, treino prático e acompanhamento direcionado.</p><a className="btn btn-primary" href={whatsapp} target="_blank" rel="noreferrer">Falar com a equipe no WhatsApp <MessageCircle size={17}/></a></div></section>
 
-      <footer><div className="container footer-inner"><div><a className="brand" href="#inicio"><span className="brand-mark"><Scale size={21}/></span><span>SINDKREI<small>MENTORIA OAB</small></span></a><p className="footer-copy">Mentoria 2ª Fase OAB · Direito do Trabalho<br/>Preparação com estratégia, prática e direcionamento.</p></div><div className="footer-links">{navLinks.map(([l,h])=><a key={h} href={h}>{l}</a>)}<a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a></div></div></footer>
-      <a className="whatsapp-float" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Fale com a equipe pelo WhatsApp"><MessageCircle/></a>
+      <footer><div className="container footer-inner"><div><a href="#inicio" aria-label="Voltar ao início"><img className="footer-brand" src={sindkreiLogo.url} alt="Sindkrei" loading="lazy" /></a><p className="footer-copy">Mentoria 2ª Fase OAB · Direito do Trabalho<br/>Preparação com estratégia, prática e direcionamento.</p></div><div className="footer-links">{navLinks.map(([l,h])=><a key={h} href={h}>{l}</a>)}<a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a></div></div></footer>
+      <a className="whatsapp-float" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Fale com a equipe pelo WhatsApp"><img src={whatsappIcon.url} alt="" /></a>
     </main>
   );
 }
