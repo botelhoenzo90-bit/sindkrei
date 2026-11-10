@@ -1,19 +1,213 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import {
+  ArrowRight, ArrowUpRight, Award, BookOpen, Check, ChevronDown, ChevronLeft,
+  ChevronRight, CircleHelp, Clock3, FileCheck2, GraduationCap, Headphones,
+  Menu, MessageCircle, PlayCircle, ShieldCheck, Sparkles, Target, Video, X,
+  Zap, BookMarked, ClipboardCheck, Layers3, Scale, Quote
+} from "lucide-react";
+
+const whatsapp = "https://wa.me/556186194180?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20Mentoria%202%C2%AA%20Fase%20OAB%20-%20Direito%20do%20Trabalho";
+
+const modules = [
+  { n: "00", title: "Módulo Introdutório", detail: "Aula inaugural gratuita", free: true },
+  { n: "01", title: "Reclamação Trabalhista", detail: "Estrutura, fundamentos e pedidos" },
+  { n: "02", title: "Contestação c/c Reconvenção", detail: "Defesa estratégica na prática" },
+  { n: "03", title: "Recurso Ordinário", detail: "Construção da peça recursal" },
+  { n: "04", title: "Recurso de Revista", detail: "Técnica e requisitos" },
+  { n: "05", title: "Contrarrazões", detail: "Resposta recursal com método" },
+  { n: "06", title: "Agravo de Instrumento", detail: "Hipóteses e estrutura" },
+  { n: "07", title: "Embargos à Execução e Impugnação à Liquidação", detail: "Atuação na fase executiva" },
+  { n: "08", title: "Embargos de Terceiros", detail: "Proteção de bens e direitos" },
+  { n: "09", title: "Agravo de Petição", detail: "Recursos na execução trabalhista" },
+  { n: "10", title: "Ação de Consignação em Pagamento", detail: "Cabimento e elaboração" },
+  { n: "11", title: "Inquérito para Apuração de Falta Grave", detail: "Procedimento e fundamentos" },
+  { n: "12", title: "Mandado de Segurança", detail: "Medida constitucional na prática" },
+  { n: "13", title: "Ação Rescisória", detail: "Hipóteses e requisitos" },
+  { n: "14", title: "Recurso Adesivo", detail: "Estratégia recursal" },
+];
+const extras = ["Exceção de Pré-Executividade", "Habeas Corpus", "Ação Monitória", "Ação de Cumprimento", "Ação Anulatória"];
+const faqs = [
+  ["Para qual área é a mentoria?", "A preparação é direcionada à 2ª fase do Exame da OAB na área de Direito do Trabalho."],
+  ["O que está incluído na preparação?", "Você terá acesso à aula inaugural gratuita, 14 módulos de aulas, módulo extra com 5 aulas bônus, roteiros exclusivos, lives semanais, 3 simulados com correção individualizada e acervo de peças práticas e questões subjetivas."],
+  ["Existe uma aula gratuita?", "Sim. O Módulo Introdutório é uma aula inaugural gratuita para você conhecer a proposta e começar sua preparação."],
+  ["Como funcionam os simulados?", "São 3 simulados com correção individualizada das peças e respostas, com análise para ajudar você a alinhar a escrita ao espelho de correção da FGV."],
+  ["Existem aulas ao vivo?", "Sim. A mentoria conta com lives semanais para aprofundamento, direcionamento e esclarecimento de dúvidas."],
+  ["Como faço minha inscrição?", "Clique em qualquer botão de WhatsApp desta página para conversar com a equipe, consultar as condições e receber as orientações de inscrição."],
+  ["Como funciona a garantia de 7 dias?", "A oferta informa garantia de 7 dias. As condições e orientações aplicáveis são apresentadas no momento da contratação."],
+];
+const benefits = [
+  { icon: BookOpen, title: "14 módulos + extra", text: "Conteúdo organizado para dominar as principais peças da área trabalhista." },
+  { icon: Video, title: "Lives semanais", text: "Encontros ao vivo para manter o ritmo e esclarecer dúvidas." },
+  { icon: ClipboardCheck, title: "3 simulados corrigidos", text: "Correção individualizada para evoluir na escrita e na estratégia." },
+  { icon: FileCheck2, title: "Acervo de treino", text: "Peças práticas e questões subjetivas para exercitar o que aprendeu." },
+];
+
+function SectionTitle({ eyebrow, title, text, light = false }: { eyebrow: string; title: string; text?: string; light?: boolean }) {
+  return <div className={`section-title ${light ? "light" : ""}`}><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{text && <p>{text}</p>}</div>;
+}
+
+function Index() {
+  const [moduleIndex, setModuleIndex] = useState(0);
+  const [reviewIndex, setReviewIndex] = useState(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [pausedModules, setPausedModules] = useState(false);
+  const [pausedReviews, setPausedReviews] = useState(false);
+
+  useEffect(() => {
+    if (pausedModules || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => setModuleIndex((v) => (v + 1) % modules.length), 3600);
+    return () => window.clearInterval(timer);
+  }, [pausedModules]);
+
+  useEffect(() => {
+    if (pausedReviews || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => setReviewIndex((v) => (v + 1) % 3), 4800);
+    return () => window.clearInterval(timer);
+  }, [pausedReviews]);
+
+  const goModule = (step: number) => setModuleIndex((v) => (v + step + modules.length) % modules.length);
+  const navLinks = [["A mentoria", "#mentoria"], ["Conteúdo", "#conteudo"], ["Diferenciais", "#diferenciais"], ["Avaliações", "#avaliacoes"], ["Garantia", "#garantia"]];
+
+  return (
+    <main className="site-shell">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+        :root{--navy:#07172d;--navy2:#102844;--wine:#65143b;--wine2:#7b1d49;--green:#70b51c;--green2:#8bc832;--ink:#18263a;--muted:#64748b;--paper:#f5f7fa}
+        *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;font-family:'DM Sans',sans-serif;color:var(--ink)}a{text-decoration:none}
+        .site-shell{overflow:hidden;background:#fff}.container{width:min(1160px,calc(100% - 44px));margin:0 auto}
+        .topbar{height:78px;display:flex;align-items:center;position:sticky;top:0;z-index:50;background:rgba(7,23,45,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.09)}
+        .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;color:white;font-family:Manrope,sans-serif;font-weight:800;letter-spacing:.12em;font-size:19px}.brand-mark{width:38px;height:38px;border:1px solid rgba(255,255,255,.55);border-radius:50%;display:grid;place-items:center;color:#fff}.brand small{display:block;font-size:9px;letter-spacing:.22em;color:#a9b5c6;font-weight:600;margin-top:1px}
+        .nav-links{display:flex;align-items:center;gap:26px}.nav-links a{font-size:13px;color:#d9e0ea;font-weight:600;transition:.2s}.nav-links a:hover{color:#a4dc58}
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:15px 23px;font-weight:800;font-size:14px;transition:transform .2s,box-shadow .2s,background .2s;border:0;cursor:pointer}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.18)}.btn-green{background:linear-gradient(120deg,#78bd25,#5b9f12);color:#fff}.btn-outline{border:1px solid rgba(255,255,255,.36);color:#fff;background:rgba(255,255,255,.05)}.btn-dark{background:var(--navy);color:#fff}.btn-white{background:#fff;color:var(--navy)}
+        .mobile-toggle{display:none;background:transparent;color:#fff;border:0;padding:8px}
+        .hero{position:relative;background:radial-gradient(circle at 76% 40%,rgba(117,25,68,.8),transparent 36%),linear-gradient(115deg,#06162c 0%,#101b35 48%,#4e1234 100%);color:#fff;padding:86px 0 90px;min-height:670px}
+        .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 5% 100%,rgba(41,91,131,.24),transparent 35%);pointer-events:none}.hero-grid{position:relative;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:38px}.hero-copy{max-width:660px}.hero-kicker{display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.08);font-size:11px;font-weight:800;letter-spacing:.16em;color:#dce7f4}.hero-kicker i{width:7px;height:7px;border-radius:50%;background:#8bd238;box-shadow:0 0 0 5px rgba(139,210,56,.14)}
+        .hero h1{font-family:Manrope,sans-serif;font-size:clamp(42px,5.4vw,68px);line-height:1.04;letter-spacing:-.055em;margin:25px 0 20px;font-weight:800}.hero h1 em{font-style:normal;color:#9cdb4b}.hero-sub{font-size:18px;line-height:1.75;color:#d5dce8;max-width:590px;margin:0 0 29px}.hero-sub strong{color:#fff}.hero-actions{display:flex;flex-wrap:wrap;gap:12px}.hero-proof{display:flex;flex-wrap:wrap;gap:18px;margin-top:34px;color:#d6deea;font-size:12px}.hero-proof span{display:flex;align-items:center;gap:7px}.hero-proof svg{color:#a6dc5b}
+        .hero-visual{position:relative;display:flex;justify-content:center;align-items:center;min-height:475px}.hero-glow{position:absolute;width:390px;height:390px;border-radius:50%;background:rgba(134,33,78,.36);filter:blur(48px)}.hero-art{position:relative;width:min(100%,490px);aspect-ratio:1/1;object-fit:cover;border-radius:30px;box-shadow:0 35px 85px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.18)}.floating-tag{position:absolute;bottom:20px;left:-18px;padding:15px 19px;background:#fff;color:var(--navy);border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.22);font-weight:800;font-size:13px;display:flex;align-items:center;gap:10px}.floating-tag svg{color:#6cae1d}
+        .trust-strip{background:#fff;position:relative;margin-top:-1px}.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);border-radius:18px;box-shadow:0 18px 55px rgba(8,27,51,.1);background:#fff;transform:translateY(-28px);overflow:hidden}.trust-item{padding:23px 22px;display:flex;gap:13px;align-items:center;border-right:1px solid #edf0f4}.trust-item:last-child{border:0}.trust-icon{width:42px;height:42px;flex:0 0 42px;border-radius:13px;background:#edf6e2;color:#5e9e1c;display:grid;place-items:center}.trust-item b{display:block;font-size:14px;color:#18263a}.trust-item small{display:block;font-size:11px;color:#748196;margin-top:4px;line-height:1.4}
+        section{padding:96px 0}.section-title{text-align:center;max-width:760px;margin:0 auto 48px}.eyebrow{display:inline-block;color:#689e23;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}.section-title h2{font-family:Manrope,sans-serif;font-size:clamp(30px,4vw,46px);letter-spacing:-.045em;line-height:1.12;margin:0;color:#14243a}.section-title p{font-size:16px;line-height:1.75;color:#6b7788;margin:17px auto 0;max-width:660px}.section-title.light h2{color:#fff}.section-title.light p{color:#c6d0df}.section-title.light .eyebrow{color:#a4db5b}
+        .intro{padding-top:50px}.intro-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}.intro-visual{background:linear-gradient(145deg,#eaf0f6,#f7f8fb);border-radius:28px;min-height:390px;position:relative;overflow:hidden;padding:36px;display:flex;align-items:flex-end}.intro-visual:before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:linear-gradient(135deg,#d6e7bd,#f5e7ed);top:-80px;right:-70px}.intro-quote{position:relative;z-index:1;background:#fff;padding:26px;border-radius:20px;box-shadow:0 18px 40px rgba(19,41,65,.1);max-width:330px}.intro-quote svg{color:#6cae1d}.intro-quote p{font-family:Manrope,sans-serif;font-size:22px;line-height:1.35;font-weight:800;color:#182a42;margin:12px 0}.intro-quote small{color:#758196}.intro-copy h2{font:800 clamp(30px,3.5vw,42px)/1.12 Manrope,sans-serif;letter-spacing:-.04em;color:#14243a;margin:0 0 18px}.intro-copy>p{color:#667487;line-height:1.8;font-size:15px}.pain-list{display:grid;gap:13px;margin:25px 0}.pain{display:flex;gap:12px;align-items:flex-start;color:#34445a;font-size:14px;line-height:1.55}.pain svg{color:#6eaa25;flex:0 0 19px;margin-top:2px}
+        .benefits{background:var(--paper)}.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.benefit-card{background:#fff;border:1px solid #e8edf2;border-radius:20px;padding:27px 23px;transition:.25s}.benefit-card:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(20,40,65,.08)}.benefit-icon{width:48px;height:48px;border-radius:15px;background:#edf6e4;color:#629f20;display:grid;place-items:center;margin-bottom:21px}.benefit-card h3{font:800 17px Manrope,sans-serif;margin:0 0 10px;color:#1b2b41}.benefit-card p{font-size:13px;line-height:1.7;color:#718095;margin:0}
+        .curriculum{background:linear-gradient(135deg,#07172d,#102742 60%,#32132f);color:#fff;position:relative}.curriculum:after{content:"";position:absolute;width:440px;height:440px;border:1px solid rgba(255,255,255,.06);border-radius:50%;right:-150px;top:5%}.curriculum .container{position:relative;z-index:1}.carousel-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px}.carousel-head .section-title{text-align:left;margin:0;max-width:720px}.carousel-head .section-title p{margin-left:0}.carousel-controls{display:flex;gap:9px;flex:0 0 auto}.circle-btn{width:45px;height:45px;border:1px solid rgba(255,255,255,.28);border-radius:50%;background:rgba(255,255,255,.07);color:#fff;display:grid;place-items:center;cursor:pointer;transition:.2s}.circle-btn:hover{background:#79b82a;border-color:#79b82a}.module-window{overflow:hidden;border-radius:22px}.module-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;transition:transform .45s ease}.module-card{min-height:205px;padding:25px;background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.12);border-radius:20px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s}.module-card:hover{background:rgba(255,255,255,.12);border-color:rgba(155,213,80,.5)}.module-top{display:flex;justify-content:space-between;align-items:center}.module-number{font:800 14px Manrope,sans-serif;color:#a7d75e;letter-spacing:.1em}.free-label{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#13243a;background:#a5d95b;padding:6px 9px;border-radius:99px}.module-card h3{font:800 18px/1.3 Manrope,sans-serif;margin:20px 0 8px;color:#fff}.module-card p{font-size:12px;color:#b8c5d4;margin:0;line-height:1.5}.module-dots{display:flex;justify-content:center;gap:7px;margin:23px 0 0}.dot{width:7px;height:7px;border:0;border-radius:20px;background:rgba(255,255,255,.28);padding:0;cursor:pointer}.dot.active{width:25px;background:#8bca39}.extra-box{margin-top:30px;padding:27px 30px;border-radius:22px;background:linear-gradient(110deg,rgba(110,177,32,.2),rgba(255,255,255,.07));border:1px solid rgba(154,211,85,.3);display:grid;grid-template-columns:.7fr 1.3fr;gap:30px;align-items:center}.extra-box h3{font:800 23px Manrope,sans-serif;margin:0 0 7px}.extra-box p{margin:0;color:#c4d0dd;font-size:13px;line-height:1.6}.extra-list{display:flex;flex-wrap:wrap;gap:9px}.extra-chip{font-size:12px;color:#e7f1dc;border:1px solid rgba(166,217,96,.3);background:rgba(6,24,37,.3);padding:9px 12px;border-radius:999px}
+        .method-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:13px;counter-reset:step}.method-card{padding:23px 18px;border:1px solid #e7edf2;border-radius:18px;background:#fff;position:relative}.method-card:before{counter-increment:step;content:"0" counter(step);font:800 24px Manrope,sans-serif;color:#dce9cd;display:block;margin-bottom:24px}.method-card h3{font:800 15px Manrope,sans-serif;color:#1c2b40;margin:0 0 9px}.method-card p{font-size:12px;line-height:1.65;color:#758195;margin:0}
+        .deep{background:#f5f7fa}.deep-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.deep-card{background:#fff;border:1px solid #e8edf2;border-radius:22px;padding:30px;display:flex;gap:18px}.deep-card .benefit-icon{flex:0 0 48px;margin:0}.deep-card h3{font:800 18px Manrope,sans-serif;margin:2px 0 9px}.deep-card p{color:#718095;font-size:13px;line-height:1.7;margin:0}
+        .simulator{background:linear-gradient(120deg,#edf4e7,#f4f6f8);padding:82px 0}.sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.sim-copy h2{font:800 clamp(30px,4vw,44px)/1.1 Manrope,sans-serif;letter-spacing:-.04em;color:#14243a;margin:0 0 17px}.sim-copy>p{font-size:15px;line-height:1.8;color:#657487}.sim-points{display:grid;gap:13px;margin:24px 0}.sim-point{display:flex;gap:11px;align-items:center;color:#31435a;font-size:14px}.sim-point svg{color:#65a51d}.sim-panel{background:#fff;border-radius:28px;padding:34px;box-shadow:0 24px 55px rgba(26,55,76,.1);position:relative}.sim-panel:before{content:"";position:absolute;inset:13px;border:1px solid #e9eef2;border-radius:20px;pointer-events:none}.sim-panel>*{position:relative}.sim-panel-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:27px}.sim-panel-top span{font-size:11px;font-weight:800;letter-spacing:.14em;color:#759052}.sim-panel-top svg{color:#6aa824}.sim-number{font:800 76px/.9 Manrope,sans-serif;color:#102a43;letter-spacing:-.07em}.sim-number small{font-size:20px;color:#81b93a;letter-spacing:0}.sim-panel h3{font:800 21px Manrope,sans-serif;color:#192d44;margin:17px 0 8px}.sim-panel p{font-size:13px;color:#718095;line-height:1.7;margin:0}.sim-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:23px}.sim-tags span{background:#eff6e8;color:#5e9227;font-size:11px;font-weight:700;padding:8px 11px;border-radius:99px}
+        .professor{background:#fff}.prof-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px;align-items:center}.prof-photo-wrap{position:relative;background:linear-gradient(140deg,#0a1a31,#63163b);padding:15px;border-radius:28px}.prof-photo{width:100%;display:block;border-radius:18px}.prof-copy h2{font:800 clamp(30px,3.5vw,43px)/1.12 Manrope,sans-serif;letter-spacing:-.04em;margin:0 0 16px;color:#14243a}.prof-copy p{font-size:15px;line-height:1.8;color:#69788b}.prof-sign{margin-top:24px;padding-top:20px;border-top:1px solid #e8edf2}.prof-sign strong{display:block;font:800 19px Manrope,sans-serif;color:#1a2b41}.prof-sign span{font-size:12px;color:#6f7f91}
+        .reviews{background:#f5f7fa}.review-stage{max-width:800px;margin:0 auto}.review-card{background:#fff;border:1px dashed #cbd6e1;border-radius:24px;padding:44px 34px;text-align:center;min-height:215px;display:flex;flex-direction:column;align-items:center;justify-content:center}.review-icon{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:#edf5e5;color:#68a724;margin-bottom:17px}.review-card h3{font:800 20px Manrope,sans-serif;color:#1c2c42;margin:0 0 8px}.review-card p{font-size:14px;line-height:1.7;color:#738196;max-width:540px;margin:0}.review-note{text-align:center;color:#8994a4;font-size:11px;margin-top:14px}.review-controls{display:flex;justify-content:center;align-items:center;gap:15px;margin-top:20px}.review-controls .circle-btn{color:#24364c;border-color:#d6dfe7;background:#fff;width:38px;height:38px}.review-controls .dot{background:#ccd5df}.review-controls .dot.active{background:#75b52b}
+        .offer{background:linear-gradient(135deg,#07172d,#102742 55%,#4e1234);color:#fff;position:relative}.offer-card{max-width:940px;margin:0 auto;background:#fff;color:#17283e;border-radius:30px;padding:42px;box-shadow:0 30px 85px rgba(0,0,0,.25)}.offer-head{text-align:center;margin-bottom:32px}.offer-head .eyebrow{color:#69a321}.offer-head h2{font:800 clamp(30px,4vw,43px)/1.1 Manrope,sans-serif;letter-spacing:-.045em;margin:0 0 12px}.offer-head p{color:#728095;font-size:14px;margin:0}.offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}.offer-line{display:flex;align-items:flex-start;gap:10px;color:#35465b;font-size:13px;line-height:1.55}.offer-line svg{color:#69a923;flex:0 0 18px;margin-top:1px}.offer-bottom{margin-top:30px;padding-top:28px;border-top:1px solid #e8edf2;display:flex;align-items:center;justify-content:space-between;gap:25px}.offer-bottom strong{display:block;font:800 19px Manrope,sans-serif;color:#17283e}.offer-bottom span{display:block;color:#748195;font-size:12px;margin-top:5px}.guarantee{display:flex;align-items:center;gap:14px;background:#f0f7e9;border:1px solid #dcebc9;padding:16px 19px;border-radius:17px;margin-top:24px}.guarantee svg{color:#65a51d;flex:0 0 30px}.guarantee b{display:block;color:#355b1a;font:800 15px Manrope,sans-serif}.guarantee small{display:block;color:#6b8057;font-size:11px;margin-top:4px}
+        .faq{background:#fff}.faq-list{max-width:850px;margin:0 auto;display:grid;gap:10px}.faq-item{border:1px solid #e6ebf0;border-radius:15px;overflow:hidden;background:#fff}.faq-question{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:19px 22px;border:0;background:#fff;text-align:left;color:#1b2b40;font:700 14px Manrope,sans-serif;cursor:pointer}.faq-question svg{color:#6ca728;transition:transform .2s;flex:0 0 18px}.faq-question[aria-expanded=true] svg{transform:rotate(180deg)}.faq-answer{padding:0 22px 20px;color:#6f7e91;font-size:13px;line-height:1.75}
+        .final-cta{background:linear-gradient(110deg,#6a163e,#351530 65%,#0b1d35);color:#fff;text-align:center;padding:82px 0}.final-cta h2{font:800 clamp(32px,4.5vw,50px)/1.1 Manrope,sans-serif;letter-spacing:-.045em;max-width:780px;margin:0 auto 16px}.final-cta p{color:#e0d5df;font-size:15px;line-height:1.7;max-width:630px;margin:0 auto 27px}
+        footer{background:#061326;color:#fff;padding:34px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-copy{color:#9aa9bb;font-size:11px;line-height:1.7}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a{color:#c9d2dd;font-size:11px}.whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:60;width:60px;height:60px;border-radius:50%;background:#20c66a;color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px rgba(9,83,48,.35);transition:.2s}.whatsapp-float:hover{transform:translateY(-4px) scale(1.03)}.whatsapp-float svg{width:29px;height:29px}
+        @media(max-width:900px){.nav-links{gap:14px}.nav-links a{font-size:12px}.nav-cta{padding:12px 15px;font-size:12px}.hero-grid{grid-template-columns:1fr .8fr;gap:15px}.hero{padding:70px 0}.hero-visual{min-height:360px}.hero-art{border-radius:22px}.trust-grid{grid-template-columns:repeat(2,1fr)}.trust-item:nth-child(2){border-right:0}.trust-item:nth-child(-n+2){border-bottom:1px solid #edf0f4}.benefit-grid{grid-template-columns:repeat(2,1fr)}.method-grid{grid-template-columns:repeat(3,1fr)}.intro-grid,.prof-grid{gap:35px}.module-track{grid-template-columns:repeat(2,minmax(0,1fr))}.extra-box{grid-template-columns:1fr}.sim-grid{gap:30px}}
+        @media(max-width:680px){.container{width:min(100% - 34px,540px)}.topbar{height:68px}.brand{font-size:16px}.brand-mark{width:34px;height:34px}.mobile-toggle{display:block}.nav-cta{display:none}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#07172d;padding:18px 22px 22px;flex-direction:column;align-items:stretch;border-top:1px solid rgba(255,255,255,.1)}.nav-links.open{display:flex}.nav-links a{font-size:14px;padding:9px 0}.hero{padding:52px 0 62px}.hero-grid{grid-template-columns:1fr;gap:26px}.hero h1{font-size:43px;max-width:520px}.hero-sub{font-size:15px;line-height:1.7}.hero-actions{display:grid}.hero-actions .btn{width:100%}.hero-proof{gap:11px 16px;font-size:11px}.hero-visual{min-height:0;padding:0 10px 10px}.hero-art{width:min(100%,390px);border-radius:20px}.floating-tag{left:0;bottom:0;padding:12px 14px;font-size:11px}.trust-grid{transform:translateY(-17px);grid-template-columns:1fr 1fr}.trust-item{padding:16px 12px;gap:9px}.trust-icon{width:35px;height:35px;flex-basis:35px}.trust-item b{font-size:11px}.trust-item small{font-size:10px}.trust-item:nth-child(2){border-right:0}.trust-item:nth-child(3){border-bottom:0}.trust-item:nth-child(4){border-bottom:0}
+          section{padding:70px 0}.intro{padding-top:28px}.intro-grid,.prof-grid,.sim-grid{grid-template-columns:1fr;gap:30px}.intro-visual{min-height:280px;padding:22px}.intro-quote{padding:20px}.intro-quote p{font-size:19px}.intro-copy h2,.sim-copy h2,.prof-copy h2{font-size:32px}.benefit-grid{grid-template-columns:1fr 1fr;gap:10px}.benefit-card{padding:20px 16px}.benefit-card h3{font-size:14px}.benefit-card p{font-size:11px}.benefit-icon{width:41px;height:41px;margin-bottom:16px}.carousel-head{align-items:flex-end}.carousel-head .section-title{margin:0}.carousel-head .section-title h2{font-size:30px}.carousel-controls{gap:6px}.circle-btn{width:38px;height:38px}.module-track{grid-template-columns:1fr}.module-card{min-height:175px}.extra-box{padding:22px}.extra-box h3{font-size:20px}.extra-chip{font-size:10px}.method-grid{grid-template-columns:1fr 1fr}.method-card{padding:18px 15px}.method-card:before{margin-bottom:15px}.method-card h3{font-size:13px}.method-card p{font-size:11px}.deep-grid{grid-template-columns:1fr}.deep-card{padding:22px;gap:13px}.simulator{padding:68px 0}.sim-panel{padding:27px 22px}.sim-number{font-size:65px}.prof-photo-wrap{max-width:420px;margin:0 auto}.review-card{padding:32px 22px;min-height:230px}.offer-card{padding:27px 20px;border-radius:22px}.offer-grid{grid-template-columns:1fr;gap:13px}.offer-bottom{align-items:stretch;flex-direction:column}.offer-bottom .btn{width:100%}.guarantee{padding:14px}.final-cta{padding:70px 0}.final-cta h2{font-size:34px}.footer-inner{align-items:flex-start;flex-direction:column}.whatsapp-float{width:55px;height:55px;right:15px;bottom:15px}}
+        @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+      `}</style>
+
+      <header className="topbar">
+        <div className="container nav-inner">
+          <a className="brand" href="#inicio" aria-label="Sindkrei - início"><span className="brand-mark"><Scale size={22}/></span><span>SINDKREI<small>MENTORIA OAB</small></span></a>
+          <nav className={`nav-links ${menuOpen ? "open" : ""}`} aria-label="Navegação principal">
+            {navLinks.map(([label, href]) => <a key={href} href={href} onClick={() => setMenuOpen(false)}>{label}</a>)}
+          </nav>
+          <a className="btn btn-green nav-cta" href={whatsapp} target="_blank" rel="noreferrer">Fale com a equipe <ArrowUpRight size={16}/></a>
+          <button className="mobile-toggle" aria-label={menuOpen ? "Fechar menu" : "Abrir menu"} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X/> : <Menu/>}</button>
+        </div>
+      </header>
+
+      <section className="hero" id="inicio">
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <span className="hero-kicker"><i/> MENTORIA COMPLETA · 2ª FASE OAB</span>
+            <h1>Sua aprovação começa com <em>estratégia e prática.</em></h1>
+            <p className="hero-sub"><strong>Direito do Trabalho com o Prof. Sindkrei.</strong> Aprenda a identificar, estruturar e desenvolver as peças profissionais com método, treino e direcionamento para o padrão de cobrança da FGV.</p>
+            <div className="hero-actions">
+              <a className="btn btn-green" href={whatsapp} target="_blank" rel="noreferrer">Quero me preparar com o Prof. Sindkrei <ArrowRight size={17}/></a>
+              <a className="btn btn-outline" href="#mentoria">Conhecer a mentoria <ChevronRight size={17}/></a>
+            </div>
+            <div className="hero-proof"><span><Check size={15}/> 14 módulos + módulo extra</span><span><Check size={15}/> Lives semanais</span><span><Check size={15}/> 3 simulados corrigidos</span></div>
+          </div>
+          <div className="hero-visual"><div className="hero-glow"/><img className="hero-art" src="/sindkrei-professor.jpg" alt="Arte oficial da Mentoria 2ª Fase OAB Direito do Trabalho com o Prof. Sindkrei"/><div className="floating-tag"><Award size={22}/> Preparação prática e direcionada</div></div>
+        </div>
+      </section>
+
+      <div className="trust-strip"><div className="container"><div className="trust-grid">
+        {benefits.map(({icon:Icon,title,text}) => <div className="trust-item" key={title}><span className="trust-icon"><Icon size={20}/></span><span><b>{title}</b><small>{text}</small></span></div>)}
+      </div></div></div>
+
+      <section className="intro" id="mentoria"><div className="container intro-grid">
+        <div className="intro-visual"><div className="intro-quote"><Sparkles size={23}/><p>Na 2ª fase, não basta saber. É preciso saber construir a resposta.</p><small>Prepare-se para escrever com estratégia.</small></div></div>
+        <div className="intro-copy"><span className="eyebrow">O desafio da 2ª fase</span><h2>Conhecimento é o começo. A prática é o que transforma sua preparação.</h2><p>A segunda fase exige mais do que domínio teórico. É necessário reconhecer a peça adequada, organizar os fundamentos, desenvolver os pedidos e administrar o tempo de prova com segurança.</p><div className="pain-list">
+          {["Identificar corretamente a peça profissional e seu cabimento.","Organizar fundamentos, artigos e pedidos de forma estratégica.","Treinar a escrita jurídica com clareza e objetividade.","Entender como aproximar sua resposta do espelho de correção da FGV."] .map((t)=><div className="pain" key={t}><Check size={18}/>{t}</div>)}
+        </div><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero conhecer a preparação <ArrowRight size={16}/></a></div>
+      </div></section>
+
+      <section className="benefits" id="diferenciais"><div className="container">
+        <SectionTitle eyebrow="Sua preparação por inteiro" title="Tudo o que você precisa para treinar com direção" text="Uma jornada organizada para sair da teoria, praticar as peças e desenvolver a escrita exigida na prova."/>
+        <div className="benefit-grid">{benefits.map(({icon:Icon,title,text})=><article className="benefit-card" key={title}><span className="benefit-icon"><Icon size={22}/></span><h3>{title}</h3><p>{text}</p></article>)}</div>
+      </div></section>
+
+      <section className="curriculum" id="conteudo"><div className="container">
+        <div className="carousel-head"><SectionTitle light eyebrow="Conteúdo programático" title="Um caminho completo pelas peças de Direito do Trabalho" text="Conheça os módulos da mentoria. Navegue pelos conteúdos e veja o que será trabalhado em sua preparação."/><div className="carousel-controls"><button className="circle-btn" aria-label="Módulo anterior" onClick={()=>goModule(-1)}><ChevronLeft/></button><button className="circle-btn" aria-label="Próximo módulo" onClick={()=>goModule(1)}><ChevronRight/></button></div></div>
+        <div className="module-window" onMouseEnter={()=>setPausedModules(true)} onMouseLeave={()=>setPausedModules(false)} onFocus={()=>setPausedModules(true)} onBlur={()=>setPausedModules(false)}>
+          <div className="module-track" style={{transform:`translateX(-${moduleIndex * 100}%)`}}>
+            {modules.map((m)=><article className="module-card" key={m.n}><div className="module-top"><span className="module-number">MÓDULO {m.n}</span>{m.free&&<span className="free-label">Aula grátis</span>}</div><div><h3>{m.title}</h3><p>{m.detail}</p></div></article>)}
+          </div>
+        </div>
+        <div className="module-dots" aria-label="Selecionar módulo">{modules.map((m,i)=><button key={m.n} className={`dot ${i===moduleIndex?"active":""}`} aria-label={`Ir para módulo ${m.n}`} onClick={()=>setModuleIndex(i)}/>)}</div>
+        <div className="extra-box"><div><span className="eyebrow">Conteúdo complementar</span><h3>Módulo EXTRA · 5 aulas bônus</h3><p>Amplie seu repertório com temas complementares para sua preparação.</p></div><div className="extra-list">{extras.map(x=><span className="extra-chip" key={x}>{x}</span>)}</div></div>
+      </div></section>
+
+      <section><div className="container"><SectionTitle eyebrow="Método de preparação" title="Da compreensão à execução: pratique cada etapa" text="Uma sequência de aprendizado para construir raciocínio jurídico, desenvolver a peça e chegar à prova com mais clareza."/><div className="method-grid">
+        {[["Identifique a peça","Aprenda a reconhecer a medida adequada a partir do enunciado."],["Entenda a estrutura","Organize endereçamento, fundamentos, pedidos e requisitos."],["Treine a escrita","Pratique peças e questões subjetivas com direcionamento."],["Receba correção","Entenda seus pontos de ajuste nos simulados individualizados."],["Evolua com estratégia","Aprimore sua preparação com conteúdo e acompanhamento."]].map(([t,d])=><article className="method-card" key={t}><h3>{t}</h3><p>{d}</p></article>)}
+      </div></div></section>
+
+      <section className="deep"><div className="container"><SectionTitle eyebrow="Mais do que videoaulas" title="Materiais e acompanhamento para colocar o conhecimento em movimento" text="Recursos de apoio para tornar o estudo mais organizado, objetivo e conectado à prática."/><div className="deep-grid">
+        {[
+          [BookMarked,"Material próprio e exclusivo","Roteiros de aula para acompanhar os conteúdos e organizar seus estudos."],
+          [Layers3,"Mapas mentais e resumos","Materiais de apoio e súmulas trabalhistas indispensáveis para consulta e revisão."],
+          [Headphones,"Suporte personalizado","Acompanhamento para orientar sua jornada e ajudar a esclarecer dúvidas."],
+          [Video,"Lives semanais","Encontros ao vivo com direcionamento e resolução comentada de questões discursivas em aulas agendadas."]
+        ].map(([Icon,title,desc])=>{const I=Icon as typeof BookMarked;return <article className="deep-card" key={title as string}><span className="benefit-icon"><I size={22}/></span><div><h3>{title as string}</h3><p>{desc as string}</p></div></article>})}
+      </div></div></section>
+
+      <section className="simulator"><div className="container sim-grid"><div className="sim-copy"><span className="eyebrow">Prática com feedback</span><h2>Você não precisa treinar no escuro.</h2><p>Os simulados são uma oportunidade de colocar seu conhecimento à prova e entender como evoluir. Você recebe uma correção individualizada das peças e respostas, com direcionamento para alinhar sua escrita ao espelho da FGV.</p><div className="sim-points">{["3 simulados ao longo da preparação","Correção individualizada das peças e respostas","Análise para identificar pontos de melhoria","Direcionamento para a escrita conforme o padrão da banca"].map(t=><div className="sim-point" key={t}><Check size={18}/>{t}</div>)}</div><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero treinar com correção <ArrowRight size={16}/></a></div>
+        <div className="sim-panel"><div className="sim-panel-top"><span>SEU TREINO NA PRÁTICA</span><ClipboardCheck size={26}/></div><div className="sim-number">03<small> simulados</small></div><h3>Correção individualizada</h3><p>Receba uma análise das suas peças e respostas para identificar ajustes e fortalecer sua preparação para a prova.</p><div className="sim-tags"><span>Peça profissional</span><span>Questões discursivas</span><span>Espelho FGV</span></div></div>
+      </div></section>
+
+      <section className="professor"><div className="container prof-grid"><div className="prof-photo-wrap"><img className="prof-photo" src="/sindkrei-professor.jpg" alt="Prof. Sindkrei, mentor de Direito do Trabalho para a 2ª fase da OAB"/></div><div className="prof-copy"><span className="eyebrow">Quem vai te acompanhar</span><h2>Aprenda com o Prof. Sindkrei</h2><p>Especialista em Direito e Processo do Trabalho, o Prof. Sindkrei conduz uma preparação voltada à aplicação prática do conteúdo, com explicações objetivas, organização das peças e direcionamento para a 2ª fase da OAB em Direito do Trabalho.</p><p>O objetivo é transformar sua preparação em uma jornada mais clara, estratégica e eficiente — com conteúdo, treino e acompanhamento.</p><div className="prof-sign"><strong>Prof. Sindkrei</strong><span>Mentoria 2ª Fase OAB · Direito do Trabalho</span></div></div></div></section>
+
+      <section className="reviews" id="avaliacoes"><div className="container"><SectionTitle eyebrow="Experiência dos alunos" title="Sua confiança também merece transparência" text="Acreditamos que resultados e experiências devem ser apresentados com autenticidade."/><div className="review-stage" onMouseEnter={()=>setPausedReviews(true)} onMouseLeave={()=>setPausedReviews(false)} onFocus={()=>setPausedReviews(true)} onBlur={()=>setPausedReviews(false)}>
+        <div className="review-card"><span className="review-icon">{reviewIndex===0?<Quote size={23}/>:reviewIndex===1?<GraduationCap size={23}/>:<MessageCircle size={23}/>}</span><h3>{["Relatos reais em breve","Avaliações de alunos","Quer compartilhar sua experiência?"][reviewIndex]}</h3><p>{["Esta área será atualizada com depoimentos autênticos de alunos da mentoria, publicados com autorização.","Estamos preparando este espaço para apresentar avaliações reais, sem nomes ou resultados fictícios.","Fale com nossa equipe pelo WhatsApp para conhecer melhor a proposta da mentoria."][reviewIndex]}</p></div>
+        <div className="review-controls"><button className="circle-btn" aria-label="Avaliação anterior" onClick={()=>setReviewIndex(v=>(v+2)%3)}><ChevronLeft size={18}/></button>{[0,1,2].map(i=><button key={i} className={`dot ${i===reviewIndex?"active":""}`} aria-label={`Ver item ${i+1}`} onClick={()=>setReviewIndex(i)}/>)}<button className="circle-btn" aria-label="Próxima avaliação" onClick={()=>setReviewIndex(v=>(v+1)%3)}><ChevronRight size={18}/></button></div>
+      </div><p className="review-note">Não exibimos depoimentos fictícios. Os relatos serão inseridos quando houver avaliações reais autorizadas.</p></div></section>
+
+      <section className="offer" id="garantia"><div className="container"><div className="offer-card"><div className="offer-head"><span className="eyebrow">Sua próxima etapa começa aqui</span><h2>Prepare-se para a 2ª fase com método, prática e direcionamento.</h2><p>Veja o que faz parte da Mentoria 2ª Fase OAB – Direito do Trabalho.</p></div><div className="offer-grid">
+        {["Aula inaugural gratuita","14 módulos de aulas + módulo extra","5 aulas bônus no módulo extra","Roteiros de aula exclusivos","Lives semanais para dúvidas e direcionamento","3 simulados com correção individualizada","Acervo de peças práticas e questões subjetivas","Mapas mentais, resumos e súmulas trabalhistas","Suporte personalizado durante a preparação"].map(t=><div className="offer-line" key={t}><Check size={18}/>{t}</div>)}
+      </div><div className="guarantee"><ShieldCheck size={30}/><div><b>Garantia de 7 dias</b><small>Você conta com o prazo de garantia informado na oferta. Consulte as condições completas no momento da contratação.</small></div></div><div className="offer-bottom"><div><strong>Consulte as condições da mentoria</strong><span>Converse com nossa equipe e receba as informações para inscrição.</span></div><a className="btn btn-green" href={whatsapp} target="_blank" rel="noreferrer">Quero entrar para a mentoria <ArrowRight size={17}/></a></div></div></div></section>
+
+      <section className="faq"><div className="container"><SectionTitle eyebrow="Tire suas dúvidas" title="Perguntas frequentes" text="Informações importantes para você conhecer a mentoria antes de dar o próximo passo."/><div className="faq-list">{faqs.map(([q,a],i)=><div className="faq-item" key={q}><button className="faq-question" aria-expanded={openFaq===i} onClick={()=>setOpenFaq(openFaq===i?null:i)}>{q}<ChevronDown size={19}/></button>{openFaq===i&&<div className="faq-answer">{a}</div>}</div>)}</div></div></section>
+
+      <section className="final-cta"><div className="container"><span className="eyebrow">Dê o próximo passo</span><h2>Seu caminho até a 2ª fase pode começar hoje.</h2><p>Conheça a Mentoria 2ª Fase OAB – Direito do Trabalho e prepare-se com conteúdo estruturado, treino prático e acompanhamento direcionado.</p><a className="btn btn-green" href={whatsapp} target="_blank" rel="noreferrer">Falar com a equipe no WhatsApp <MessageCircle size={17}/></a></div></section>
+
+      <footer><div className="container footer-inner"><div><a className="brand" href="#inicio"><span className="brand-mark"><Scale size={21}/></span><span>SINDKREI<small>MENTORIA OAB</small></span></a><p className="footer-copy">Mentoria 2ª Fase OAB · Direito do Trabalho<br/>Preparação com estratégia, prática e direcionamento.</p></div><div className="footer-links">{navLinks.map(([l,h])=><a key={h} href={h}>{l}</a>)}<a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a></div></div></footer>
+      <a className="whatsapp-float" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Fale com a equipe pelo WhatsApp"><MessageCircle/></a>
+    </main>
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Página em branco" },
-      { name: "description", content: "Uma página vazia, pronta para começar." },
-      { property: "og:title", content: "Página em branco" },
-      { property: "og:description", content: "Uma página vazia, pronta para começar." },
+      { title: "Mentoria 2ª Fase OAB | Direito do Trabalho — Prof. Sindkrei" },
+      { name: "description", content: "Prepare-se para a 2ª fase da OAB em Direito do Trabalho com 14 módulos, aulas bônus, lives semanais e simulados com correção individualizada." },
+      { property: "og:title", content: "Mentoria 2ª Fase OAB — Direito do Trabalho | Prof. Sindkrei" },
+      { property: "og:description", content: "Estratégia, prática e direcionamento para sua preparação na 2ª fase da OAB." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
 });
-
-function Index() {
-  return <main className="min-h-screen bg-background" />;
-}
