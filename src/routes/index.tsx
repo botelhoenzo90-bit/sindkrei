@@ -145,7 +145,7 @@ function Index() {
 
       <section className="benefits" id="diferenciais"><div className="container">
         <SectionTitle eyebrow="Sua preparação por inteiro" title="Tudo o que você precisa para treinar com direção" text="Uma jornada organizada para sair da teoria, praticar as peças e desenvolver a escrita exigida na prova."/>
-        <div className="benefit-grid">{benefits.map(({icon:Icon,title,text})=><article className="benefit-card" key={title}><span className="benefit-icon"><Icon size={22}/></span><h3>{title}</h3><p>{text}</p></article>)}<div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div>
+        <div className="benefit-grid">{benefits.map(({icon:Icon,title,text})=><article className="benefit-card" key={title}><span className="benefit-icon"><Icon size={22}/></span><h3>{title}</h3><p>{text}</p></article>)}</div><div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div>
       </div></section>
 
       <section className="curriculum" id="conteudo"><div className="container">
@@ -176,7 +176,7 @@ function Index() {
 
       <section className="reviews" id="avaliacoes"><div className="container">
         <SectionTitle eyebrow="Depoimentos reais" title="Histórias de quem trilhou esse caminho com o Prof. Sindkrei" text="Relatos enviados por alunos sobre suas experiências com as aulas e a preparação em Direito do Trabalho."/>
-        <div className="testimonial-carousel"><div className="testimonial-track">{[...testimonials,...testimonials].map(([name,review],i)=><article className="testimonial-card" key={`${name}-${i}`}><div className="testimonial-photo-placeholder" aria-label={`Identificação de ${name}`}>{name.slice(0,1)}</div><div className="testimonial-content"><div className="testimonial-stars">★★★★★</div><p>“{review}”</p><strong>{name}</strong><small>Relato enviado por aluno</small></div></article>)}</div></div><div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div>
+        <div className="testimonial-carousel"><div className="testimonial-track">{[...testimonials,...testimonials].map(([name,review],i)=><article className="testimonial-card" key={`${name}-${i}`}><div className="testimonial-photo-placeholder" aria-label={`Identificação de ${name}`}>{name?.slice(0,1)}</div><div className="testimonial-content"><div className="testimonial-stars">★★★★★</div><p>“{review}”</p><strong>{name}</strong><small>Relato enviado por aluno</small></div></article>)}</div></div><div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div>
       </div></section>
 
       <section className="offer" id="garantia"><div className="container"><div className="offer-card"><div className="offer-head"><span className="eyebrow">Sua próxima etapa começa aqui</span><h2>Uma preparação completa para estudar com método, praticar e evoluir.</h2><p>Veja o que faz parte da Mentoria 2ª Fase OAB – Direito do Trabalho.</p></div><div className="offer-grid">
