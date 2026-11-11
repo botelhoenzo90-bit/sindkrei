@@ -14,3 +14,4 @@
 - [x] Usar a logomarca no favicon e na imagem de compartilhamento.
 - [x] Exibir os depoimentos sem cortar o texto.
 - [x] Aumentar os textos pequenos e conferir no computador e no celular.
+- [ ] Adicionar o novo depoimento com a foto enviada e texto resumido.
