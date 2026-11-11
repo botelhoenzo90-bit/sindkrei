@@ -604,6 +604,25 @@ function Index() {
   .site-shell .method-card{width:100%!important;max-width:100%!important}
 }
 
+
+/* Oferta: remover completamente os degradês e usar cinza sólido */
+.site-shell .pricing-panel{
+  background:#f0f1f3!important;
+  background-image:none!important;
+  border:1px solid #d7dbe1!important;
+  box-shadow:none!important;
+}
+.site-shell .pricing-panel .pricing-main{
+  background:#e2e5e9!important;
+  background-image:none!important;
+  color:#17283e!important;
+  border:1px solid #d0d5dc!important;
+  box-shadow:none!important;
+}
+.site-shell .pricing-panel .pricing-main .pricing-label{color:#657184!important}
+.site-shell .pricing-panel .pricing-main strong{color:#17283e!important}
+.site-shell .pricing-panel .pricing-main small{color:#4c596b!important}
+
       `}
       </style>
 
