@@ -638,6 +638,19 @@ function Index() {
   color:#fff!important;
 }
 
+/* Ajuste final: card de investimento em cinza bem claro e sem degradê */
+.site-shell .pricing-panel .pricing-main{
+  background:#f4f5f7!important;
+  background-color:#f4f5f7!important;
+  background-image:none!important;
+  color:#17283e!important;
+  border:1px solid #e2e5e9!important;
+  box-shadow:none!important;
+}
+.site-shell .pricing-panel .pricing-main .pricing-label{color:#657184!important}
+.site-shell .pricing-panel .pricing-main strong{color:#17283e!important}
+.site-shell .pricing-panel .pricing-main small{color:#4c596b!important}
+
       `}
       </style>
 
@@ -735,17 +748,3 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
-
-/* Ajuste final: card de investimento em cinza bem claro e sem degradê */
-.site-shell .pricing-panel .pricing-main{
-  background:#f4f5f7!important;
-  background-color:#f4f5f7!important;
-  background-image:none!important;
-  color:#17283e!important;
-  border:1px solid #e2e5e9!important;
-  box-shadow:none!important;
-}
-.site-shell .pricing-panel .pricing-main .pricing-label{color:#657184!important}
-.site-shell .pricing-panel .pricing-main strong{color:#17283e!important}
-.site-shell .pricing-panel .pricing-main small{color:#4c596b!important}
