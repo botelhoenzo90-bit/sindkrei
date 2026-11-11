@@ -748,3 +748,20 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
+
+
+/* Centraliza o CTA da sessão Mais do que videoaulas também no desktop */
+.site-shell .deep .deep-grid>.section-cta{
+  grid-column:1 / -1!important;
+  width:100%!important;
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+  text-align:center!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.site-shell .deep .deep-grid>.section-cta .btn{
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
