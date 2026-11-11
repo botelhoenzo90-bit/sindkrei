@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   ArrowRight, Award, BookOpen, Check, ChevronDown, ChevronLeft,
   ChevronRight, FileCheck2, Headphones, MessageCircle, ShieldCheck,
-  Sparkles, Video, BookMarked, ClipboardCheck, Layers3, TrendingUp
+  Sparkles, Video, BookMarked, ClipboardCheck, Layers3, TrendingUp, Instagram, Youtube
 } from "lucide-react";
 import jaquelinePhoto from "@/assets/testimonials/jaqueline.png.asset.json";
 import sueliPhoto from "@/assets/testimonials/sueli.png.asset.json";
@@ -92,7 +92,7 @@ const faqs = [
   ["Como funcionam os simulados?", "São 3 simulados com correção individualizada das peças e respostas, com análise para ajudar você a alinhar a escrita ao espelho de correção da FGV."],
   ["Existem aulas ao vivo?", "Sim. A mentoria conta com lives semanais para aprofundamento, direcionamento e esclarecimento de dúvidas."],
   ["Qual é o investimento na mentoria?", "O valor é R$ 997,80, em até 6 parcelas de R$ 166,30 no cartão. Ex-alunos têm 30% de desconto e pagamentos à vista têm 20% de desconto. Consulte a equipe para confirmar as condições de pagamento."],
-   ["Como faço minha inscrição?", "Clique em qualquer botão de WhatsApp desta página para conversar com a equipe, consultar as condições e receber as orientações de inscrição."],
+   ["Como faço minha inscrição?", "Acesse o botão de inscrição para conferir as condições e concluir sua matrícula na mentoria."],
   ["Como funciona a garantia de 7 dias?", "A oferta informa garantia de 7 dias. As condições e orientações aplicáveis são apresentadas no momento da contratação."],
 ];
 const benefits = [
@@ -463,7 +463,57 @@ function Index() {
           .site-shell .testimonial-review{font-size:14px;line-height:1.7}
         }
 
-      `}</style>
+      `}
+/* Refinos de layout, avaliações, redes sociais e investimento */
+.site-shell .intro-copy-centered .pain-list{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:1160px}
+.site-shell .intro-copy-centered .pain{min-height:132px;flex-direction:column;align-items:flex-start;justify-content:center;gap:12px;padding:20px 18px;background:linear-gradient(145deg,#fff,#f7eef2);border:1px solid #ead5df;box-shadow:0 12px 28px rgba(101,20,59,.08)}
+.site-shell .intro-copy-centered .pain:nth-child(2){background:linear-gradient(145deg,#f3f6fb,#e8eef6);border-color:#dce5ef}
+.site-shell .intro-copy-centered .pain:nth-child(3){background:linear-gradient(145deg,#fbf7ef,#f3e8d8);border-color:#eadbc5}
+.site-shell .intro-copy-centered .pain:nth-child(4){background:linear-gradient(145deg,#f2f6f4,#e5efea);border-color:#d8e7df}
+.site-shell .intro-copy-centered .pain svg{margin:0}
+.site-shell .method-grid{position:relative;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;align-items:start}
+.site-shell .method-grid:before{content:"";position:absolute;z-index:0;left:8%;right:8%;top:50%;height:2px;background:linear-gradient(90deg,rgba(229,196,155,.18),#e5c49b,rgba(229,196,155,.18));box-shadow:0 0 15px rgba(229,196,155,.25)}
+.site-shell .method-card{z-index:1;min-height:250px;background:linear-gradient(155deg,rgba(255,255,255,.13),rgba(255,255,255,.055));backdrop-filter:blur(5px)}
+.site-shell .method-card:nth-child(even){margin-top:42px}.site-shell .method-card:nth-child(odd){margin-bottom:42px}
+.site-shell .method-card:after{content:"";position:absolute;left:50%;bottom:-23px;width:9px;height:9px;border-radius:50%;background:#e5c49b;box-shadow:0 0 0 5px rgba(229,196,155,.15);transform:translateX(-50%)}
+.site-shell .method-card:nth-child(even):after{top:-23px;bottom:auto}
+.site-shell .method-grid .section-cta{position:relative;z-index:2}
+.site-shell .simulator{background:linear-gradient(135deg,#e8eef7 0%,#e9e2ec 52%,#f4e8ee 100%)}
+.site-shell .feedback-card{border-color:#d9e1ed;box-shadow:0 18px 42px rgba(27,47,76,.09)}
+.site-shell .testimonial-group{align-items:stretch}
+.site-shell .testimonial-card{height:270px;min-height:270px;flex:0 0 330px;width:330px;display:flex;flex-direction:column;align-items:stretch;padding:20px 21px}
+.site-shell .testimonial-stars{width:100%;text-align:center;color:#f0b323;font-size:19px;letter-spacing:4px;margin:0 0 13px;line-height:1.2}
+.site-shell .testimonial-review{flex:1;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden;font-size:12px;line-height:1.65;margin:0 0 12px}
+.site-shell .testimonial-author{margin-top:auto;min-height:58px}
+.site-shell .prof-socials{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.site-shell .prof-socials a{display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border-radius:999px;background:#f4edf0;border:1px solid #eadbe3;color:#65143b;font-size:13px;font-weight:800;transition:.2s}
+.site-shell .prof-socials a:hover{background:#65143b;color:#fff;transform:translateY(-2px)}
+.site-shell .pricing-panel{background:linear-gradient(135deg,#fff8ef 0%,#f8edf2 52%,#f0f4fa 100%);border:2px solid #e5c49b;box-shadow:0 18px 42px rgba(101,20,59,.1);padding:30px}
+.site-shell .pricing-main{text-align:center;padding:24px 20px 26px;border:0;border-radius:18px;background:linear-gradient(120deg,#07172d,#18334e 65%,#65143b);color:#fff;box-shadow:0 14px 28px rgba(7,23,45,.18)}
+.site-shell .pricing-label{color:#e9c99f;font-size:11px;letter-spacing:.2em}
+.site-shell .pricing-main strong{color:#fff;font-size:clamp(44px,5vw,60px)}
+.site-shell .pricing-main small{color:#e1e7ef;font-size:14px}
+.site-shell .pricing-discounts>div{background:#fff;border:1px solid #ead6df;box-shadow:0 8px 20px rgba(101,20,59,.06);padding:20px 14px}
+.site-shell .pricing-discounts>div:first-child{background:linear-gradient(145deg,#f8eaf0,#fff);border-color:#d9b5c5}
+.site-shell .pricing-discounts>div:last-child{background:linear-gradient(145deg,#f7f0e4,#fff);border-color:#e5d2b4}
+.site-shell .pricing-discounts span{display:block;color:#66758a;font-size:12px;font-weight:800;margin-bottom:7px}
+.site-shell .pricing-discounts strong{display:block;color:#65143b;font:800 25px Manrope,sans-serif}
+.site-shell .pricing-discounts small{display:block;color:#17283e;font:800 18px Manrope,sans-serif;margin-top:7px}
+@media(max-width:1000px){
+.site-shell .intro-copy-centered .pain-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+.site-shell .method-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.site-shell .method-grid:before{display:none}
+.site-shell .method-card:nth-child(even),.site-shell .method-card:nth-child(odd){margin:0}.site-shell .method-card:after{display:none}
+}
+@media(max-width:680px){
+.site-shell .intro-copy-centered .pain-list{grid-template-columns:1fr}
+.site-shell .intro-copy-centered .pain{min-height:0;flex-direction:row;align-items:center}
+.site-shell .method-grid{grid-template-columns:1fr 1fr;gap:12px}.site-shell .method-card{min-height:220px}
+.site-shell .testimonial-card{height:260px;min-height:260px;flex-basis:280px;width:280px;padding:17px 16px}
+.site-shell .pricing-panel{padding:18px 13px}.site-shell .pricing-main{padding:22px 12px}
+.site-shell .pricing-discounts>div{padding:14px 8px}.site-shell .pricing-discounts strong{font-size:20px}
+}
+
+      </style>
 
 
       <section className="hero" id="inicio">
@@ -474,7 +524,7 @@ function Index() {
             <h1>Sua aprovação começa com <em>estratégia, prática e direção.</em></h1>
             <p className="hero-sub"><strong>Direito do Trabalho com o Prof. Sindkrei.</strong> Domine a estrutura das peças, desenvolva respostas com clareza e treine com foco no padrão de correção da FGV.</p>
             <div className="hero-actions">
-              <a className="btn btn-primary" href={whatsapp} target="_blank" rel="noreferrer">Quero me preparar com o Prof. Sindkrei <ArrowRight size={17}/></a>
+              <a className="btn btn-primary" href="#garantia">Quero me preparar com o Prof. Sindkrei <ArrowRight size={17}/></a>
               <a className="btn btn-outline" href="#mentoria">Conhecer a mentoria <ChevronRight size={17}/></a>
             </div>
             
@@ -488,22 +538,22 @@ function Index() {
       <section className="intro" id="mentoria"><div className="container intro-grid">
         <div className="intro-copy intro-copy-centered"><span className="eyebrow">O desafio da 2ª fase</span><h2>Na 2ª fase, não basta saber. É preciso saber construir a resposta.</h2><p className="challenge-lead">Prepare-se para transformar conhecimento jurídico em peças e respostas bem estruturadas, com técnica, clareza e estratégia.</p><div className="pain-list">
           {["Identificar corretamente a peça profissional e seu cabimento.","Organizar fundamentos, artigos e pedidos de forma estratégica.","Treinar a escrita jurídica com clareza e objetividade.","Compreender como alinhar sua resposta aos critérios do espelho de correção da FGV."] .map((t)=><div className="pain" key={t}><Check size={18}/>{t}</div>)}
-        </div><a className="btn btn-primary" href={whatsapp} target="_blank" rel="noreferrer">Quero conhecer a preparação <ArrowRight size={16}/></a></div>
+        </div><a className="btn btn-primary" href="#garantia">Quero conhecer a preparação <ArrowRight size={16}/></a></div>
       </div></section>
 
       <section className="benefits" id="diferenciais"><div className="container">
         <SectionTitle eyebrow="Sua preparação por inteiro" title="Tudo o que você precisa para treinar com direção" text="Uma jornada organizada para sair da teoria, praticar as peças e desenvolver a escrita exigida na prova."/>
-        <div className="benefit-grid">{benefits.map(({icon:Icon,title,text})=><article className="benefit-card" key={title}><span className="benefit-icon"><Icon size={22}/></span><h3>{title}</h3><p>{text}</p></article>)}</div><div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div>
+        <div className="benefit-grid">{benefits.map(({icon:Icon,title,text})=><article className="benefit-card" key={title}><span className="benefit-icon"><Icon size={22}/></span><h3>{title}</h3><p>{text}</p></article>)}</div><div className="section-cta"><a className="btn btn-dark" href="#garantia">Quero conhecer a mentoria <ArrowRight size={16}/></a></div>
       </div></section>
 
       <section className="curriculum" id="conteudo"><div className="container">
         <div className="carousel-head"><SectionTitle light eyebrow="Conteúdo programático" title="Um caminho completo pelas peças de Direito do Trabalho" text="Conheça os módulos da mentoria e veja tudo o que será trabalhado em sua preparação."/></div><div className="module-window"><div className="module-track">{[0,1].map((copy)=><div className="module-group" key={copy} aria-hidden={copy===1}>{modules.map((m)=>{const photo=modulePhotos[m.n];return photo?<article className="module-card module-card-photo" key={`${copy}-${m.n}`}><div className="module-photo-slot"><img className="module-photo" src={photo} alt={`Capa do módulo ${m.n}: ${m.title}`} loading="lazy" />{m.free&&<span className="free-label module-free-badge">Aula grátis</span>}</div></article>:<article className="module-card" key={`${copy}-${m.n}`}><div className="module-body"><div className="module-top"><span className="module-number">MÓDULO {m.n}</span>{m.free&&<span className="free-label">Aula grátis</span>}</div><div className="module-description"><h3>{m.title}</h3><p>{m.detail}</p></div></div></article>})}</div>)}</div></div>
-        <div className="extra-box"><div className="extra-intro"><span className="eyebrow">CONTEÚDO ESPECIAL · 5 AULAS</span><h3>Um módulo extra para ampliar suas possibilidades de atuação</h3><p>Conheça medidas e ações complementares que enriquecem seu repertório jurídico e ampliam sua visão prática.</p><a className="btn btn-primary" href={whatsapp} target="_blank" rel="noreferrer">Quero conhecer o módulo extra <ArrowRight size={16}/></a><div className="extra-counter"><strong>05</strong><span>aulas complementares</span></div></div><div className="extra-lessons">{extras.map((x,i)=><article className="extra-lesson" key={x}><span className="extra-index">0{i+1}</span><div><strong>{x}</strong><small>Conteúdo complementar</small></div><ArrowRight size={16}/></article>)}</div></div><div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div>
+        <div className="extra-box"><div className="extra-intro"><span className="eyebrow">CONTEÚDO ESPECIAL · 5 AULAS</span><h3>Um módulo extra para ampliar suas possibilidades de atuação</h3><p>Conheça medidas e ações complementares que enriquecem seu repertório jurídico e ampliam sua visão prática.</p><div className="extra-counter"><strong>05</strong><span>aulas complementares</span></div></div><div className="extra-lessons">{extras.map((x,i)=><article className="extra-lesson" key={x}><span className="extra-index">0{i+1}</span><div><strong>{x}</strong><small>Conteúdo complementar</small></div><ArrowRight size={16}/></article>)}</div></div><div className="section-cta"><a className="btn btn-dark" href="#garantia">Quero conhecer a mentoria <ArrowRight size={16}/></a></div>
       </div></section>
 
       <section className="method-section"><div className="container"><SectionTitle eyebrow="MÉTODO DE PREPARAÇÃO" title="Da leitura do enunciado à resposta pronta para a banca." text="Uma jornada prática, organizada em etapas que se conectam para desenvolver seu raciocínio, sua escrita e sua segurança na prova."/><div className="method-grid">
         {[["Identifique a peça","Aprenda a reconhecer a medida adequada a partir do enunciado."],["Entenda a estrutura","Organize endereçamento, fundamentos, pedidos e requisitos."],["Treine a escrita","Pratique peças e questões subjetivas com direcionamento."],["Receba correção","Entenda seus pontos de ajuste nos simulados individualizados."],["Evolua com estratégia","Aprimore sua preparação com conteúdo e acompanhamento."]].map(([t,d],i)=><article className="method-card" key={t}><span className="method-step-label">ETAPA {String(i+1).padStart(2,"0")}</span><h3>{t}</h3><p>{d}</p><span className="method-step-line"/></article>)}
-<div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div>
+<div className="section-cta"><a className="btn btn-dark" href="#garantia">Quero conhecer a mentoria <ArrowRight size={16}/></a></div>
       </div></div></section>
 
       <section className="deep"><div className="container"><SectionTitle eyebrow="Mais do que videoaulas" title="Uma preparação que vai além das aulas" text="Materiais, acompanhamento e ferramentas para transformar o estudo em uma rotina mais organizada, prática e consistente."/><div className="deep-grid">
@@ -513,28 +563,28 @@ function Index() {
           [Headphones,"Suporte personalizado","Acompanhamento para orientar sua jornada e ajudar a esclarecer dúvidas."],
           [Video,"Lives semanais","Encontros ao vivo com direcionamento e resolução comentada de questões discursivas em aulas agendadas."]
         ].map(([Icon,title,desc])=>{const I=Icon as typeof BookMarked;return <article className="deep-card" key={title as string}><span className="benefit-icon"><I size={22}/></span><div><h3>{title as string}</h3><p>{desc as string}</p></div></article>})}
-<div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div>
+<div className="section-cta"><a className="btn btn-dark" href="#garantia">Quero conhecer a mentoria <ArrowRight size={16}/></a></div>
       </div></div></section>
 
-      <section className="simulator"><div className="container"><div className="feedback-heading"><span className="eyebrow">PRÁTICA COM FEEDBACK</span><h2>Seu desempenho evolui quando você entende como melhorar.</h2><p>Você pratica, recebe uma análise individual e descobre exatamente onde ajustar a construção da sua resposta para se aproximar do padrão esperado pela FGV.</p></div><div className="feedback-flow"><article className="feedback-card"><span className="feedback-number">01</span><div className="feedback-icon"><FileCheck2 size={25}/></div><h3>Resolva o simulado</h3><p>Coloque em prática a identificação da peça, os fundamentos e os pedidos.</p><small>EXECUÇÃO</small></article><div className="feedback-connector"><ArrowRight size={22}/></div><article className="feedback-card featured"><span className="feedback-number">02</span><div className="feedback-icon"><ClipboardCheck size={25}/></div><h3>Receba a correção</h3><p>Sua resposta é analisada individualmente, com atenção à estrutura e à fundamentação.</p><small>ANÁLISE</small></article><div className="feedback-connector"><ArrowRight size={22}/></div><article className="feedback-card"><span className="feedback-number">03</span><div className="feedback-icon"><TrendingUp size={25}/></div><h3>Saiba como evoluir</h3><p>Entenda os ajustes necessários e leve os aprendizados para o próximo treino.</p><small>EVOLUÇÃO</small></article></div><div className="feedback-footer"><strong>3 simulados com correção individualizada</strong><a className="btn btn-primary" href={whatsapp} target="_blank" rel="noreferrer">Quero treinar com correção <ArrowRight size={16}/></a></div></div>
+      <section className="simulator"><div className="container"><div className="feedback-heading"><span className="eyebrow">PRÁTICA COM FEEDBACK</span><h2>Seu desempenho evolui quando você entende como melhorar.</h2><p>Você pratica, recebe uma análise individual e descobre exatamente onde ajustar a construção da sua resposta para se aproximar do padrão esperado pela FGV.</p></div><div className="feedback-flow"><article className="feedback-card"><span className="feedback-number">01</span><div className="feedback-icon"><FileCheck2 size={25}/></div><h3>Resolva o simulado</h3><p>Coloque em prática a identificação da peça, os fundamentos e os pedidos.</p><small>EXECUÇÃO</small></article><div className="feedback-connector"><ArrowRight size={22}/></div><article className="feedback-card featured"><span className="feedback-number">02</span><div className="feedback-icon"><ClipboardCheck size={25}/></div><h3>Receba a correção</h3><p>Sua resposta é analisada individualmente, com atenção à estrutura e à fundamentação.</p><small>ANÁLISE</small></article><div className="feedback-connector"><ArrowRight size={22}/></div><article className="feedback-card"><span className="feedback-number">03</span><div className="feedback-icon"><TrendingUp size={25}/></div><h3>Saiba como evoluir</h3><p>Entenda os ajustes necessários e leve os aprendizados para o próximo treino.</p><small>EVOLUÇÃO</small></article></div><div className="feedback-footer"><strong>3 simulados com correção individualizada</strong><a className="btn btn-primary" href="#garantia">Quero treinar com correção <ArrowRight size={16}/></a></div></div>
       </section>
 
-      <section className="professor"><div className="container prof-grid"><div className="prof-photo-wrap"><img className="prof-photo" src={professorPhoto.url} alt="Prof. Sindkrei de terno e braços cruzados" loading="lazy" /></div><div className="prof-copy"><span className="eyebrow">Quem vai te acompanhar</span><h2>Aprenda com o Prof. Sindkrei</h2><p>Na mentoria, o Prof. Sindkrei organiza o estudo de Direito e Processo do Trabalho com foco na aplicação prática: identificação da peça, estrutura, fundamentos, pedidos e treino direcionado à 2ª fase da OAB.</p><p>O objetivo é transformar sua preparação em uma jornada mais clara, estratégica e eficiente — com conteúdo, treino e acompanhamento.</p><div className="prof-sign"><strong>Prof. Sindkrei</strong><span>Mentoria 2ª Fase OAB · Direito do Trabalho</span></div><div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div></div></div></section>
+      <section className="professor"><div className="container prof-grid"><div className="prof-photo-wrap"><img className="prof-photo" src={professorPhoto.url} alt="Prof. Sindkrei de terno e braços cruzados" loading="lazy" /></div><div className="prof-copy"><span className="eyebrow">Quem vai te acompanhar</span><h2>Aprenda com o Prof. Sindkrei</h2><p>Na mentoria, o Prof. Sindkrei organiza o estudo de Direito e Processo do Trabalho com foco na aplicação prática: identificação da peça, estrutura, fundamentos, pedidos e treino direcionado à 2ª fase da OAB.</p><p>O objetivo é transformar sua preparação em uma jornada mais clara, estratégica e eficiente — com conteúdo, treino e acompanhamento.</p><div className="prof-sign"><strong>Prof. Sindkrei</strong><span>Mentoria 2ª Fase OAB · Direito do Trabalho</span></div><div className="prof-socials"><a href="https://www.instagram.com/profsindkrei?rpxt=NHM2dGV5cXhucWwx" target="_blank" rel="noreferrer"><Instagram size={19}/> Instagram</a><a href="https://www.youtube.com/@ProfessorSindkrei" target="_blank" rel="noreferrer"><Youtube size={20}/> YouTube</a></div><div className="section-cta"><a className="btn btn-dark" href="#garantia">Quero conhecer a mentoria <ArrowRight size={16}/></a></div></div></div></section>
 
       <section className="reviews" id="avaliacoes"><div className="container">
         <SectionTitle eyebrow="Depoimentos reais" title="Histórias de quem trilhou esse caminho com o Prof. Sindkrei" text="Relatos enviados por alunos sobre suas experiências com as aulas e a preparação em Direito do Trabalho."/>
-        <div className="testimonial-carousel"><div className="testimonial-track">{[0,1].map((copy)=><div className="testimonial-group" key={copy} aria-hidden={copy===1}>{testimonials.map(([name,review],i)=><article className="testimonial-card" key={`${copy}-${name}`}><div className="testimonial-stars">★★★★★</div><p className="testimonial-review">“{review}”</p><div className="testimonial-author"><div className="testimonial-photo-placeholder"><img className="testimonial-photo" src={testimonialPhotos[i]} alt={`Foto de ${name}`} loading="lazy" /></div><div className="testimonial-author-name"><strong>{name}</strong><small>Aluna da mentoria</small></div></div></article>)}</div>)}</div></div><div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div>
+        <div className="testimonial-carousel"><div className="testimonial-track">{[0,1].map((copy)=><div className="testimonial-group" key={copy} aria-hidden={copy===1}>{testimonials.map(([name,review],i)=><article className="testimonial-card" key={`${copy}-${name}`}><div className="testimonial-stars">★★★★★</div><p className="testimonial-review">“{review}”</p><div className="testimonial-author"><div className="testimonial-photo-placeholder"><img className="testimonial-photo" src={testimonialPhotos[i]} alt={`Foto de ${name}`} loading="lazy" /></div><div className="testimonial-author-name"><strong>{name}</strong><small>Aluna da mentoria</small></div></div></article>)}</div>)}</div></div><div className="section-cta"><a className="btn btn-dark" href="#garantia">Quero conhecer a mentoria <ArrowRight size={16}/></a></div>
       </div></section>
 
       <section className="offer" id="garantia"><div className="container"><div className="offer-card"><div className="offer-head"><span className="eyebrow">Sua próxima etapa começa aqui</span><h2>Uma preparação completa para estudar com método, praticar e evoluir.</h2><p>Veja o que faz parte da Mentoria 2ª Fase OAB – Direito do Trabalho.</p></div><div className="pricing-panel"><div className="pricing-main"><span className="pricing-label">INVESTIMENTO NA MENTORIA</span><strong>R$ 997,80</strong><small>em até 6x de R$ 166,30 no cartão</small></div><div className="pricing-discounts"><div><span>Ex-aluno</span><strong>30% OFF</strong><small>R$ 698,46</small></div><div><span>Pagamento à vista</span><strong>20% OFF</strong><small>R$ 798,24</small></div></div></div><div className="offer-grid">
         {["Aula inaugural gratuita","14 módulos de aulas + módulo extra","5 aulas bônus no módulo extra","Roteiros de aula exclusivos","Lives semanais para dúvidas e direcionamento","3 simulados com correção individualizada","Acervo de peças práticas e questões subjetivas","Mapas mentais, resumos e súmulas trabalhistas","Suporte personalizado durante a preparação"].map(t=><div className="offer-line" key={t}><Check size={18}/>{t}</div>)}
-      </div><div className="offer-bottom"><a className="btn btn-primary" href={whatsapp} target="_blank" rel="noreferrer">Quero entrar para a mentoria <ArrowRight size={17}/></a></div></div><div className="guarantee guarantee-outside"><ShieldCheck size={30}/><div><b>Garantia de 7 dias</b><small>A contratação conta com garantia de 7 dias. Consulte as condições e o procedimento para solicitação no momento da inscrição.</small></div></div></div></section>
+      </div><div className="offer-bottom"><a className="btn btn-primary" href="#garantia">Quero entrar para a mentoria <ArrowRight size={17}/></a></div></div><div className="guarantee guarantee-outside"><ShieldCheck size={30}/><div><b>Garantia de 7 dias</b><small>A contratação conta com garantia de 7 dias. Consulte as condições e o procedimento para solicitação no momento da inscrição.</small></div></div></div></section>
 
-      <section className="faq"><div className="container"><SectionTitle eyebrow="Tire suas dúvidas" title="Perguntas frequentes" text="Informações importantes para você conhecer a mentoria antes de dar o próximo passo."/><div className="faq-list">{faqs.map(([q,a],i)=><div className="faq-item" key={q}><button className="faq-question" aria-expanded={openFaq===i} onClick={()=>setOpenFaq(openFaq===i?null:i)}>{q}<ChevronDown size={19}/></button>{openFaq===i&&<div className="faq-answer">{a}</div>}</div>)}</div><div className="section-cta"><a className="btn btn-dark" href={whatsapp} target="_blank" rel="noreferrer">Quero saber mais pelo WhatsApp <ArrowRight size={16}/></a></div></div></section>
+      <section className="faq"><div className="container"><SectionTitle eyebrow="Tire suas dúvidas" title="Perguntas frequentes" text="Informações importantes para você conhecer a mentoria antes de dar o próximo passo."/><div className="faq-list">{faqs.map(([q,a],i)=><div className="faq-item" key={q}><button className="faq-question" aria-expanded={openFaq===i} onClick={()=>setOpenFaq(openFaq===i?null:i)}>{q}<ChevronDown size={19}/></button>{openFaq===i&&<div className="faq-answer">{a}</div>}</div>)}</div><div className="section-cta"><a className="btn btn-dark" href="#garantia">Quero conhecer a mentoria <ArrowRight size={16}/></a></div></div></section>
 
-      <section className="final-cta"><div className="container"><span className="eyebrow">Dê o próximo passo</span><h2>Seu caminho até a 2ª fase pode começar hoje.</h2><p>Conheça a Mentoria 2ª Fase OAB – Direito do Trabalho e prepare-se com conteúdo estruturado, treino prático e acompanhamento direcionado.</p><a className="btn btn-primary" href={whatsapp} target="_blank" rel="noreferrer">Falar com a equipe no WhatsApp <MessageCircle size={17}/></a></div></section>
+      <section className="final-cta"><div className="container"><span className="eyebrow">Dê o próximo passo</span><h2>Seu caminho até a 2ª fase pode começar hoje.</h2><p>Conheça a Mentoria 2ª Fase OAB – Direito do Trabalho e prepare-se com conteúdo estruturado, treino prático e acompanhamento direcionado.</p><a className="btn btn-primary" href="#garantia">Quero fazer minha inscrição <MessageCircle size={17}/></a></div></section>
 
-      <footer><div className="container footer-inner"><div><a href="#inicio" aria-label="Voltar ao início"><img className="footer-brand" src={sindkreiLogo.url} alt="Sindkrei" loading="lazy" /></a><p className="footer-copy">Mentoria 2ª Fase OAB · Direito do Trabalho<br/>Preparação com estratégia, prática e direcionamento.</p></div><div className="footer-links">{navLinks.map(([l,h])=><a key={h} href={h}>{l}</a>)}<a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a></div></div></footer>
+      <footer><div className="container footer-inner"><div><a href="#inicio" aria-label="Voltar ao início"><img className="footer-brand" src={sindkreiLogo.url} alt="Sindkrei" loading="lazy" /></a><p className="footer-copy">Mentoria 2ª Fase OAB · Direito do Trabalho<br/>Preparação com estratégia, prática e direcionamento.</p></div><div className="footer-links">{navLinks.map(([l,h])=><a key={h} href={h}>{l}</a>)}</div></div></footer>
       <a className="whatsapp-float" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Fale com a equipe pelo WhatsApp"><img src={whatsappIcon.url} alt="" /></a>
     </main>
   );
