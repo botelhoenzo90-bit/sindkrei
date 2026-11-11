@@ -559,6 +559,51 @@ function Index() {
  .site-shell .hero-actions{align-items:center}
 }
 
+
+/* Ajustes finais solicitados */
+.site-shell .method-grid{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  gap:18px!important;
+}
+.site-shell .method-grid:before{display:none!important;content:none!important}
+.site-shell .method-card{
+  width:100%!important;
+  max-width:860px!important;
+  min-height:0!important;
+  margin:0 auto!important;
+}
+.site-shell .method-card:after{display:none!important;content:none!important}
+.site-shell .pricing-main{
+  background-color:#e7e9ed!important;
+  background-image:none!important;
+  color:#17283e!important;
+  border:1px solid #d2d7df!important;
+  box-shadow:none!important;
+}
+.site-shell .pricing-main .pricing-label{color:#657184!important}
+.site-shell .pricing-main strong{color:#17283e!important}
+.site-shell .pricing-main small{color:#4c596b!important}
+.site-shell .final-cta .eyebrow{color:#f0c66e!important}
+.site-shell footer .footer-inner{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  gap:22px!important;
+}
+.site-shell footer .footer-inner>div:first-child{width:100%;text-align:center!important}
+.site-shell footer .footer-inner>div:first-child>a{display:inline-flex;justify-content:center;align-items:center}
+.site-shell footer .footer-brand{display:block;margin:0 auto!important}
+.site-shell footer .footer-copy{text-align:center!important}
+.site-shell footer .footer-links{justify-content:center!important}
+@media(max-width:680px){
+  .site-shell .method-grid{gap:14px!important}
+  .site-shell .method-card{width:100%!important;max-width:100%!important}
+}
+
       `}
       </style>
 
