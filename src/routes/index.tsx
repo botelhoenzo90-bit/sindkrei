@@ -623,6 +623,21 @@ function Index() {
 .site-shell .pricing-panel .pricing-main strong{color:#17283e!important}
 .site-shell .pricing-panel .pricing-main small{color:#4c596b!important}
 
+
+/* Card principal de investimento em cinza médio, sem degradê */
+.site-shell .pricing-panel .pricing-main{
+  background-color:#626b76!important;
+  background-image:none!important;
+  color:#fff!important;
+  border:1px solid #626b76!important;
+  box-shadow:none!important;
+}
+.site-shell .pricing-panel .pricing-main .pricing-label,
+.site-shell .pricing-panel .pricing-main strong,
+.site-shell .pricing-panel .pricing-main small{
+  color:#fff!important;
+}
+
       `}
       </style>
 
