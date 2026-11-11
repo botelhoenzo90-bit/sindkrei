@@ -463,7 +463,6 @@ function Index() {
           .site-shell .testimonial-review{font-size:14px;line-height:1.7}
         }
 
-      `}
 /* Refinos de layout, avaliações, redes sociais e investimento */
 .site-shell .intro-copy-centered .pain-list{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:1160px}
 .site-shell .intro-copy-centered .pain{min-height:132px;flex-direction:column;align-items:flex-start;justify-content:center;gap:12px;padding:20px 18px;background:linear-gradient(145deg,#fff,#f7eef2);border:1px solid #ead5df;box-shadow:0 12px 28px rgba(101,20,59,.08)}
@@ -513,6 +512,7 @@ function Index() {
 .site-shell .pricing-discounts>div{padding:14px 8px}.site-shell .pricing-discounts strong{font-size:20px}
 }
 
+      `}
       </style>
 
 
