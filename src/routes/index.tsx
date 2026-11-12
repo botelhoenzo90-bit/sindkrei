@@ -896,9 +896,84 @@ function Index() {
   }
   .site-shell .testimonial-review{font-size:14px!important;line-height:1.7!important;-webkit-line-clamp:7!important}
   .site-shell .testimonial-stars{font-size:17px!important;letter-spacing:2px!important}
+
+/* Alinhamento central dos ícones nos cards das duas seções */
+.site-shell .benefits .benefit-card{
+  align-items:center!important;
+  text-align:center!important;
+}
+.site-shell .benefits .benefit-card .benefit-icon{
+  margin:0 auto 20px!important;
+}
+.site-shell .deep .deep-grid>.deep-card{
+  align-items:center!important;
+  text-align:center!important;
+}
+.site-shell .deep .deep-grid>.deep-card .benefit-icon{
+  margin:0 auto 2px!important;
+}
+.site-shell .deep .deep-grid>.deep-card>div{
+  width:100%!important;
+  text-align:center!important;
 }
 
-      `}
+/* Depoimentos restaurados ao formato horizontal da primeira versão de hoje */
+.site-shell .testimonial-card{
+  box-sizing:border-box!important;
+  flex:0 0 520px!important;
+  width:520px!important;
+  height:auto!important;
+  min-height:280px!important;
+  max-height:none!important;
+  display:grid!important;
+  grid-template-columns:112px minmax(0,1fr)!important;
+  align-items:center!important;
+  gap:22px!important;
+  padding:25px!important;
+  overflow:hidden!important;
+}
+.site-shell .testimonial-photo-placeholder{
+  width:104px!important;
+  height:104px!important;
+  flex:0 0 104px!important;
+}
+.site-shell .testimonial-review{
+  font-size:16px!important;
+  line-height:1.8!important;
+  -webkit-line-clamp:6!important;
+}
+@media(max-width:680px){
+  .site-shell .testimonial-card{
+    flex:0 0 min(88vw,520px)!important;
+    width:min(88vw,520px)!important;
+    height:auto!important;
+    min-height:280px!important;
+    max-height:none!important;
+    grid-template-columns:88px minmax(0,1fr)!important;
+    gap:15px!important;
+    padding:20px!important;
+  }
+  .site-shell .testimonial-photo-placeholder{
+    width:82px!important;
+    height:82px!important;
+    flex:0 0 82px!important;
+  }
+  .site-shell .testimonial-review{
+    font-size:14px!important;
+    line-height:1.7!important;
+    -webkit-line-clamp:6!important;
+  }
+}
+
+/* Reduz o excesso de espaço vertical entre as seções */
+.site-shell section{padding-top:68px!important;padding-bottom:68px!important}
+.site-shell .section-title{margin-bottom:34px!important}
+@media(max-width:680px){
+  .site-shell section{padding-top:50px!important;padding-bottom:50px!important}
+  .site-shell .section-title{margin-bottom:26px!important}
+}
+
+      }
       </style>
 
 
