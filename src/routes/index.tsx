@@ -799,9 +799,106 @@ function Index() {
   .site-shell .testimonial-review{font-size:16px!important;line-height:1.75!important}
   .site-shell .faq-question{font-size:16px!important;padding:19px 18px!important}
   .site-shell .faq-answer{font-size:15px!important;padding:0 18px 20px!important}
+
+/* Cards das seções de diferenciais: formato equilibrado e textos mais legíveis */
+.site-shell .benefits .section-title .eyebrow,
+.site-shell .deep .section-title .eyebrow{
+  font-size:16px!important;
+  letter-spacing:.16em!important;
+  line-height:1.5!important;
+}
+.site-shell .benefit-grid,
+.site-shell .deep .deep-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:20px!important;
+  align-items:stretch!important;
+}
+.site-shell .benefit-card{
+  min-height:225px!important;
+  padding:30px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  border-radius:22px!important;
+}
+.site-shell .benefit-card .benefit-icon{width:58px!important;height:58px!important;margin:0 0 20px!important}
+.site-shell .benefit-card h3{font-size:22px!important;line-height:1.35!important;margin-bottom:12px!important}
+.site-shell .benefit-card p{font-size:17px!important;line-height:1.75!important}
+.site-shell .deep .deep-grid>.deep-card{
+  min-height:225px!important;
+  padding:30px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  gap:18px!important;
+  border-radius:22px!important;
+}
+.site-shell .deep .deep-card .benefit-icon{width:58px!important;height:58px!important;flex:0 0 58px!important}
+.site-shell .deep .deep-card h3{font-size:22px!important;line-height:1.35!important;margin:0 0 10px!important}
+.site-shell .deep .deep-card p{font-size:17px!important;line-height:1.75!important}
+.site-shell .deep .deep-grid>.section-cta{grid-column:1/-1!important}
+
+/* Depoimentos: recuperar composição horizontal e ampliar o cartão sem alongá-lo */
+.site-shell .testimonial-card{
+  box-sizing:border-box!important;
+  flex:0 0 570px!important;
+  width:570px!important;
+  height:340px!important;
+  min-height:340px!important;
+  max-height:340px!important;
+  display:grid!important;
+  grid-template-columns:125px minmax(0,1fr)!important;
+  align-items:center!important;
+  gap:25px!important;
+  padding:28px!important;
+  overflow:hidden!important;
+}
+.site-shell .testimonial-photo-placeholder{
+  width:112px!important;height:112px!important;flex:0 0 112px!important;
+}
+.site-shell .testimonial-review{
+  font-size:16px!important;line-height:1.75!important;
+  -webkit-line-clamp:6!important;
+}
+.site-shell .testimonial-author-name strong{font-size:16px!important}
+.site-shell .testimonial-author-name small{font-size:13px!important}
+@media(max-width:680px){
+  .site-shell .benefit-grid,
+  .site-shell .deep .deep-grid{
+    grid-template-columns:1fr!important;
+    gap:15px!important;
+  }
+  .site-shell .benefit-card,
+  .site-shell .deep .deep-grid>.deep-card{
+    min-height:0!important;
+    padding:24px!important;
+  }
+  .site-shell .benefit-card h3,
+  .site-shell .deep .deep-card h3{font-size:20px!important}
+  .site-shell .benefit-card p,
+  .site-shell .deep .deep-card p{font-size:16px!important}
+  .site-shell .testimonial-card{
+    flex:0 0 88vw!important;
+    width:88vw!important;
+    height:360px!important;
+    min-height:360px!important;
+    max-height:360px!important;
+    grid-template-columns:76px minmax(0,1fr)!important;
+    align-items:start!important;
+    gap:14px!important;
+    padding:20px!important;
+  }
+  .site-shell .testimonial-photo-placeholder{
+    width:70px!important;height:70px!important;flex:0 0 70px!important;
+  }
+  .site-shell .testimonial-review{font-size:14px!important;line-height:1.7!important;-webkit-line-clamp:7!important}
+  .site-shell .testimonial-stars{font-size:17px!important;letter-spacing:2px!important}
 }
 
-      `}
+      }
       </style>
 
 
