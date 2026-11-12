@@ -728,6 +728,80 @@ function Index() {
 }
 
       `}
+
+/* Refinamento final de alinhamento e legibilidade */
+@media(max-width:680px){
+  .site-shell .hero-sub{
+    text-align:center!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    max-width:100%!important;
+    font-size:19px!important;
+    line-height:1.75!important;
+  }
+  .site-shell .benefit-card h3{font-size:20px!important;line-height:1.35!important}
+  .site-shell .benefit-card p{font-size:17px!important;line-height:1.75!important}
+  .site-shell .extra-lesson strong{font-size:17px!important;line-height:1.45!important}
+  .site-shell .extra-lesson small{font-size:15px!important;line-height:1.5!important}
+  .site-shell .method-card h3{font-size:21px!important}
+  .site-shell .method-card p{font-size:17px!important;line-height:1.75!important}
+}
+.site-shell .method-card h3{font-size:21px!important;line-height:1.35!important}
+.site-shell .method-card p{font-size:17px!important;line-height:1.75!important}
+.site-shell .feedback-flow .feedback-card{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  text-align:center!important;
+}
+.site-shell .feedback-flow .feedback-icon{margin:12px auto 25px!important}
+.site-shell .feedback-flow .feedback-number{right:18px!important}
+.site-shell .feedback-flow .feedback-card h3,
+.site-shell .feedback-flow .feedback-card p{width:100%;text-align:center!important}
+.site-shell .feedback-flow .feedback-card small{
+  left:0!important;
+  right:0!important;
+  text-align:center!important;
+}
+.site-shell .reviews .section-title .eyebrow{font-size:15px!important;letter-spacing:.16em!important}
+.site-shell .testimonial-card{
+  flex-basis:570px!important;
+  width:570px!important;
+  min-height:330px!important;
+  padding:30px!important;
+  grid-template-columns:125px minmax(0,1fr)!important;
+  gap:25px!important;
+}
+.site-shell .testimonial-review{
+  font-size:16px!important;
+  line-height:1.8!important;
+  -webkit-line-clamp:6!important;
+}
+.site-shell .testimonial-stars{font-size:21px!important;margin-bottom:16px!important}
+.site-shell .testimonial-author-name strong{font-size:16px!important}
+.site-shell .testimonial-author-name small{font-size:13px!important}
+.site-shell .offer-head>p{font-size:19px!important;line-height:1.8!important}
+.site-shell .faq .section-title .eyebrow{font-size:14px!important;letter-spacing:.15em!important}
+.site-shell .faq .section-title h2{font-size:clamp(34px,4.5vw,48px)!important}
+.site-shell .faq .section-title p{font-size:18px!important;line-height:1.8!important}
+.site-shell .faq-question{font-size:17px!important;line-height:1.55!important;padding:22px 24px!important}
+.site-shell .faq-answer{font-size:16px!important;line-height:1.85!important;padding:0 24px 22px!important}
+@media(max-width:680px){
+  .site-shell .testimonial-card{
+    flex-basis:min(88vw,440px)!important;
+    width:min(88vw,440px)!important;
+    min-height:0!important;
+    padding:22px!important;
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+    text-align:left!important;
+  }
+  .site-shell .testimonial-photo-placeholder{width:72px!important;height:72px!important;flex-basis:72px!important}
+  .site-shell .testimonial-review{font-size:16px!important;line-height:1.75!important}
+  .site-shell .faq-question{font-size:16px!important;padding:19px 18px!important}
+  .site-shell .faq-answer{font-size:15px!important;padding:0 18px 20px!important}
+}
+
       </style>
 
 
