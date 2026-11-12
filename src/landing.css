@@ -1098,3 +1098,26 @@
     line-height:1.7!important;
   }
 }
+
+
+/* Mobile: cards acompanham o conteúdo, sem áreas vazias; tipografia uniforme */
+@media(max-width:680px){
+  .site-shell .testimonial-card{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    justify-content:flex-start!important;
+    padding:20px!important;
+    gap:0!important;
+  }
+  .site-shell .testimonial-review{
+    font-size:14px!important;
+    line-height:1.7!important;
+    margin:0 0 14px!important;
+    -webkit-line-clamp:6!important;
+  }
+  .site-shell .testimonial-author{
+    margin-top:0!important;
+    padding-top:12px!important;
+  }
+}
