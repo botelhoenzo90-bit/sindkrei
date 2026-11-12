@@ -727,7 +727,6 @@ function Index() {
   .site-shell .feedback-card p{font-size:16px!important}
 }
 
-      `}
 
 /* Refinamento final de alinhamento e legibilidade */
 @media(max-width:680px){
@@ -802,6 +801,7 @@ function Index() {
   .site-shell .faq-answer{font-size:15px!important;padding:0 18px 20px!important}
 }
 
+      `}
       </style>
 
 
