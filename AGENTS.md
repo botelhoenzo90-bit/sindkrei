@@ -28,3 +28,5 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Landing page styles live in `src/landing.css` (linked via `?url` in the index route head), never in an inline `<style>{`...`}` template in `src/routes/index.tsx` — the inline template repeatedly broke the build when its closing was lost; keep braces balanced since the build rejects unclosed blocks.
