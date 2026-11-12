@@ -971,9 +971,113 @@ function Index() {
 @media(max-width:680px){
   .site-shell section{padding-top:50px!important;padding-bottom:50px!important}
   .site-shell .section-title{margin-bottom:26px!important}
+
+/* Pequeno reforço na identificação do professor e da mentoria */
+.site-shell .hero-sub strong{font-size:1.12em!important}
+.site-shell .hero-sub{font-size:22px!important;line-height:1.8!important}
+@media(max-width:680px){
+  .site-shell .hero-sub{font-size:19px!important;line-height:1.75!important}
+  .site-shell .hero-sub strong{font-size:1.1em!important}
 }
 
-      `}
+/* Depoimentos no mobile: estrelas, relato e identificação em três níveis claros */
+@media(max-width:680px){
+  .site-shell .testimonial-card{
+    box-sizing:border-box!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    justify-content:flex-start!important;
+    gap:0!important;
+    width:min(88vw,460px)!important;
+    flex:0 0 min(88vw,460px)!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:22px!important;
+    overflow:visible!important;
+    border-radius:20px!important;
+    text-align:left!important;
+  }
+  .site-shell .testimonial-stars{
+    order:0!important;
+    display:block!important;
+    width:100%!important;
+    text-align:center!important;
+    font-size:20px!important;
+    letter-spacing:3px!important;
+    line-height:1.4!important;
+    margin:0 0 16px!important;
+  }
+  .site-shell .testimonial-review{
+    order:1!important;
+    display:block!important;
+    width:100%!important;
+    flex:none!important;
+    overflow:visible!important;
+    -webkit-line-clamp:unset!important;
+    -webkit-box-orient:initial!important;
+    font-size:15px!important;
+    line-height:1.75!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere!important;
+    word-break:normal!important;
+    margin:0 0 20px!important;
+  }
+  .site-shell .testimonial-author{
+    order:2!important;
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:13px!important;
+    width:100%!important;
+    min-width:0!important;
+    border-top:1px solid #edf0f3!important;
+    padding-top:15px!important;
+    margin-top:auto!important;
+  }
+  .site-shell .testimonial-photo-placeholder{
+    display:grid!important;
+    place-items:center!important;
+    width:58px!important;
+    height:58px!important;
+    min-width:58px!important;
+    flex:0 0 58px!important;
+    overflow:hidden!important;
+    margin:0!important;
+  }
+  .site-shell .testimonial-photo{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+  }
+  .site-shell .testimonial-author-name{
+    display:flex!important;
+    flex:1 1 auto!important;
+    min-width:0!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    justify-content:center!important;
+    gap:4px!important;
+    text-align:left!important;
+  }
+  .site-shell .testimonial-author-name strong{
+    display:block!important;
+    font-size:16px!important;
+    line-height:1.35!important;
+    overflow-wrap:anywhere!important;
+  }
+  .site-shell .testimonial-author-name small{
+    display:block!important;
+    font-size:13px!important;
+    line-height:1.4!important;
+    white-space:normal!important;
+  }
+}
+
+      }
       </style>
 
 
