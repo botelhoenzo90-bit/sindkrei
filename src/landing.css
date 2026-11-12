@@ -683,6 +683,7 @@
   .site-shell .faq-question{font-size:16px!important;padding:19px 18px!important}
   .site-shell .faq-answer{font-size:15px!important;padding:0 18px 20px!important}
 
+}
 /* Cards das seções de diferenciais: formato equilibrado e textos mais legíveis */
 .site-shell .benefits .section-title .eyebrow,
 .site-shell .deep .section-title .eyebrow{
@@ -780,6 +781,7 @@
   .site-shell .testimonial-review{font-size:14px!important;line-height:1.7!important;-webkit-line-clamp:7!important}
   .site-shell .testimonial-stars{font-size:17px!important;letter-spacing:2px!important}
 
+}
 /* Alinhamento central dos ícones nos cards das duas seções */
 .site-shell .benefits .benefit-card{
   align-items:center!important;
@@ -855,6 +857,7 @@
   .site-shell section{padding-top:50px!important;padding-bottom:50px!important}
   .site-shell .section-title{margin-bottom:26px!important}
 
+}
 /* Pequeno reforço na identificação do professor e da mentoria */
 .site-shell .hero-sub strong{font-size:1.12em!important}
 .site-shell .hero-sub{font-size:22px!important;line-height:1.8!important}
