@@ -1082,3 +1082,19 @@
     -webkit-line-clamp:7!important;
   }
 }
+
+
+/* Mobile: encerra o depoimento com reticências, sem cortar o texto abruptamente */
+@media(max-width:680px){
+  .site-shell .testimonial-review{
+    display:-webkit-box!important;
+    flex:0 1 auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    -webkit-box-orient:vertical!important;
+    -webkit-line-clamp:6!important;
+    line-height:1.7!important;
+  }
+}
