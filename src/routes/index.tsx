@@ -669,6 +669,65 @@ function Index() {
   margin-right:auto!important;
 }
       `}
+
+/* Ajustes de hierarquia e leitura nas seções solicitadas */
+.site-shell .hero-copy{max-width:700px}
+.site-shell .hero-sub{
+  max-width:650px!important;
+  font-size:21px!important;
+  line-height:1.75!important;
+  text-align:left!important;
+  margin-left:0!important;
+  margin-right:0!important;
+}
+.site-shell .hero h1{
+  font-size:clamp(48px,6vw,76px)!important;
+  line-height:1.08!important;
+  letter-spacing:-.045em!important;
+}
+.site-shell .intro-copy .eyebrow{font-size:14px!important;letter-spacing:.16em!important}
+.site-shell .intro-copy h2{font-size:clamp(36px,4.2vw,50px)!important;line-height:1.14!important}
+.site-shell .intro-copy .challenge-lead{
+  font-size:20px!important;
+  line-height:1.8!important;
+  color:#53647a!important;
+}
+.site-shell .intro-copy .pain{
+  font-size:18px!important;
+  line-height:1.7!important;
+  gap:14px!important;
+}
+.site-shell .section-title p{font-size:19px!important;line-height:1.8!important}
+.site-shell .extra-lesson strong{font-size:17px!important;line-height:1.45!important}
+.site-shell .extra-lesson small{font-size:14px!important;line-height:1.5!important}
+.site-shell .extra-index{font-size:16px!important}
+.site-shell .method-step-label{font-size:14px!important;letter-spacing:.12em!important}
+.site-shell .method-card h3{font-size:20px!important;line-height:1.3!important}
+.site-shell .method-card p{font-size:16px!important;line-height:1.75!important}
+.site-shell .deep-card h3{font-size:22px!important;line-height:1.3!important}
+.site-shell .deep-card p{font-size:17px!important;line-height:1.8!important}
+.site-shell .feedback-heading p{font-size:19px!important;line-height:1.8!important}
+.site-shell .feedback-card h3{font-size:22px!important;line-height:1.3!important}
+.site-shell .feedback-card p{font-size:17px!important;line-height:1.8!important}
+.site-shell .feedback-card small{font-size:14px!important;letter-spacing:.12em!important}
+@media(max-width:680px){
+  .site-shell .hero h1{font-size:clamp(39px,10vw,54px)!important;line-height:1.1!important}
+  .site-shell .hero-sub{font-size:18px!important;line-height:1.7!important}
+  .site-shell .intro-copy h2{font-size:34px!important}
+  .site-shell .intro-copy .challenge-lead{font-size:18px!important}
+  .site-shell .intro-copy .pain{font-size:16px!important}
+  .site-shell .section-title p{font-size:17px!important}
+  .site-shell .extra-lesson strong{font-size:15px!important}
+  .site-shell .extra-lesson small{font-size:13px!important}
+  .site-shell .method-card h3{font-size:19px!important}
+  .site-shell .method-card p{font-size:15px!important}
+  .site-shell .deep-card h3{font-size:20px!important}
+  .site-shell .deep-card p{font-size:16px!important}
+  .site-shell .feedback-heading p{font-size:17px!important}
+  .site-shell .feedback-card h3{font-size:20px!important}
+  .site-shell .feedback-card p{font-size:16px!important}
+}
+
       </style>
 
 
