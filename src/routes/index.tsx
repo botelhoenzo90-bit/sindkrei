@@ -668,7 +668,6 @@ function Index() {
   margin-left:auto!important;
   margin-right:auto!important;
 }
-      `}
 
 /* Ajustes de hierarquia e leitura nas seções solicitadas */
 .site-shell .hero-copy{max-width:700px}
@@ -728,6 +727,7 @@ function Index() {
   .site-shell .feedback-card p{font-size:16px!important}
 }
 
+      `}
       </style>
 
 
