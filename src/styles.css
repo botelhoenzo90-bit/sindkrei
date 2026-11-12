@@ -153,3 +153,27 @@
     color: var(--color-foreground);
   }
 }
+
+
+/* Global readability pass: enlarge typography consistently across the entire site. */
+html {
+  font-size: 19px;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Keep dense content, cards, labels and form controls comfortable to read. */
+:where(p, li, label, small, input, textarea, select, button) {
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 17px;
+  }
+}
