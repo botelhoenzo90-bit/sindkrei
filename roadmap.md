@@ -15,3 +15,4 @@
 - [x] Exibir os depoimentos sem cortar o texto.
 - [x] Aumentar os textos pequenos e conferir no computador e no celular.
 - [x] Adicionar o novo depoimento com a foto enviada e texto resumido.
+- [x] Colocar o link de checkout da Hotmart no botão da seção de oferta e fazer os demais botões levarem até essa seção.
