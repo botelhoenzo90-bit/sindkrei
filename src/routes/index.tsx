@@ -43,6 +43,7 @@ import modulo12 from "@/assets/modules/modulo-12.png.asset.json";
 import modulo13 from "@/assets/modules/modulo-13.png.asset.json";
 import modulo14 from "@/assets/modules/modulo-14.png.asset.json";
 
+const checkout = "https://pay.hotmart.com/I101592829Y?bid=1794590905103";
 const whatsapp = "https://wa.me/556186194180?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20Mentoria%202%C2%AA%20Fase%20OAB%20-%20Direito%20do%20Trabalho";
 
 const modules = [
@@ -126,7 +127,7 @@ function Index() {
             <p className="hero-sub"><strong>Direito do Trabalho com o Prof. Sindkrei.</strong> Domine a estrutura das peças, desenvolva respostas com clareza e treine com foco no padrão de correção da FGV.</p>
             <div className="hero-actions">
               <a className="btn btn-primary" href="#garantia">Quero me preparar com o Prof. Sindkrei <ArrowRight size={17}/></a>
-              <a className="btn btn-outline" href="#mentoria">Conhecer a mentoria <ChevronRight size={17}/></a>
+              <a className="btn btn-outline" href="#garantia">Conhecer a mentoria <ChevronRight size={17}/></a>
             </div>
             
           </div>
@@ -179,7 +180,7 @@ function Index() {
 
       <section className="offer" id="garantia"><div className="container"><div className="offer-card"><div className="offer-head"><span className="eyebrow">Sua próxima etapa começa aqui</span><h2>Uma preparação completa para estudar com método, praticar e evoluir.</h2><p>Veja o que faz parte da Mentoria 2ª Fase OAB – Direito do Trabalho.</p></div><div className="pricing-panel"><div className="pricing-main"><span className="pricing-label">INVESTIMENTO NA MENTORIA</span><strong>R$ 997,80</strong><small>em até 6x de R$ 166,30 no cartão</small></div><div className="pricing-discounts"><div><span>Ex-aluno</span><strong>30% OFF</strong><small>R$ 698,46</small></div><div><span>Pagamento à vista</span><strong>20% OFF</strong><small>R$ 798,24</small></div></div></div><div className="offer-grid">
         {["Aula inaugural gratuita","14 módulos de aulas + módulo extra","5 aulas bônus no módulo extra","Roteiros de aula exclusivos","Lives semanais para dúvidas e direcionamento","3 simulados com correção individualizada","Acervo de peças práticas e questões subjetivas","Mapas mentais, resumos e súmulas trabalhistas","Suporte personalizado durante a preparação"].map(t=><div className="offer-line" key={t}><Check size={18}/>{t}</div>)}
-      </div><div className="offer-bottom"><a className="btn btn-primary" href="#garantia">Quero entrar para a mentoria <ArrowRight size={17}/></a></div></div><div className="guarantee guarantee-outside"><ShieldCheck size={30}/><div><b>Garantia de 7 dias</b><small>A contratação conta com garantia de 7 dias. Consulte as condições e o procedimento para solicitação no momento da inscrição.</small></div></div></div></section>
+      </div><div className="offer-bottom"><a className="btn btn-primary" href={checkout} target="_blank" rel="noopener noreferrer">Quero entrar para a mentoria <ArrowRight size={17}/></a></div></div><div className="guarantee guarantee-outside"><ShieldCheck size={30}/><div><b>Garantia de 7 dias</b><small>A contratação conta com garantia de 7 dias. Consulte as condições e o procedimento para solicitação no momento da inscrição.</small></div></div></div></section>
 
       <section className="faq"><div className="container"><SectionTitle eyebrow="Tire suas dúvidas" title="Perguntas frequentes" text="Informações importantes para você conhecer a mentoria antes de dar o próximo passo."/><div className="faq-list">{faqs.map(([q,a],i)=><div className="faq-item" key={q}><button className="faq-question" aria-expanded={openFaq===i} onClick={()=>setOpenFaq(openFaq===i?null:i)}>{q}<ChevronDown size={19}/></button>{openFaq===i&&<div className="faq-answer">{a}</div>}</div>)}</div><div className="section-cta"><a className="btn btn-dark" href="#garantia">Quero conhecer a mentoria <ArrowRight size={16}/></a></div></div></section>
 
