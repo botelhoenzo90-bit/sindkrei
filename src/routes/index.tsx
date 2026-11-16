@@ -53,7 +53,7 @@ const whatsapp = "https://wa.me/556186194180?text=Ol%C3%A1%21%20Quero%20saber%20
 
 type ModuleItem = { n: string; title: string; detail: string; free?: boolean; extra?: boolean };
 const modules: ModuleItem[] = [
-  { n: "00", title: "Módulo Introdutório", detail: "Aula inaugural gratuita", free: true },
+  { n: "00", title: "Módulo Introdutório", detail: "Aula inaugural gratuita" },
   { n: "01", title: "Reclamação Trabalhista", detail: "Estrutura, fundamentos e pedidos" },
   { n: "02", title: "Contestação c/c Reconvenção", detail: "Defesa estratégica na prática" },
   { n: "03", title: "Recurso Ordinário", detail: "Construção da peça recursal" },
