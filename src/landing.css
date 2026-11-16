@@ -311,6 +311,10 @@
   .site-shell .module-card:not(.module-card-photo){min-height:300px;background:#fff;border:1px solid #e6e8ed;border-radius:20px;box-shadow:0 16px 36px rgba(0,0,0,.18)}
   @media(max-width:680px){.site-shell .module-card{flex:0 0 252px;width:252px}.site-shell .module-card-photo .module-photo-slot{height:252px}}
 
+  /* Texto de abertura: linhas equilibradas e o nome do professor inteiro na mesma linha. */
+  .site-shell .hero-sub{text-wrap:balance}
+  .site-shell .hero-sub .nb{white-space:nowrap}
+
   /* Leitura confortável e depoimentos completos, sem limite de linhas. */
   .site-shell .nav-links a{font-size:14px}
   .site-shell .hero-kicker,.site-shell .eyebrow{font-size:12px}

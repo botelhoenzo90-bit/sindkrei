@@ -19,3 +19,4 @@
 - [x] Trocar a capa do módulo 07 pela nova enviada (Embargos à Execução e Impugnação à Liquidação).
 - [x] Adicionar as 5 aulas extras no fim do carrossel, depois do módulo 14.
 - [x] Tirar o selo "Aula grátis" da capa do Módulo Introdutório.
+- [x] Alinhar o texto de abertura: nome do professor inteiro na mesma linha e quebras equilibradas.
