@@ -18,3 +18,4 @@
 - [x] Colocar o link de checkout da Hotmart no botão da seção de oferta e fazer os demais botões levarem até essa seção.
 - [x] Trocar a capa do módulo 07 pela nova enviada (Embargos à Execução e Impugnação à Liquidação).
 - [x] Adicionar as 5 aulas extras no fim do carrossel, depois do módulo 14.
+- [x] Tirar o selo "Aula grátis" da capa do Módulo Introdutório.
