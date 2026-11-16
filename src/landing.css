@@ -279,7 +279,7 @@
   }
 
   /* Ajustes finais: estes valores têm prioridade sobre os estilos anteriores. */
-  .site-shell .module-track{gap:0;animation:moduleMarquee 46s linear infinite}
+  .site-shell .module-track{gap:0;animation:moduleMarquee 61s linear infinite}
   .site-shell .testimonial-carousel{width:100vw;max-width:none;margin:0 0 0 calc(50% - 50vw)}
   .site-shell .testimonial-track{gap:0;animation:reviewMarquee 90s linear infinite}
   .site-shell .module-window:hover .module-track,.site-shell .testimonial-carousel:hover .testimonial-track{animation-play-state:running}
