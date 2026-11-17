@@ -1127,23 +1127,29 @@
 }
 
 
-/* Texto de abertura com leitura natural, sem espaços esticados entre palavras. */
+/* Texto de abertura ampliado e justificado, com espaçamento natural. */
 .site-shell .hero-sub{
   max-width: 590px!important;
-  text-align: left!important;
-  text-wrap: pretty!important;
+  text-align: justify!important;
+  text-align-last: left!important;
+  text-wrap: initial!important;
   line-height: 1.65!important;
   word-spacing: normal!important;
   letter-spacing: normal!important;
+  hyphens: auto!important;
+  overflow-wrap: normal!important;
 }
 .site-shell .hero-sub strong{display:inline!important;}
 @media(max-width:680px){
   .site-shell .hero-sub{
     max-width: 100%!important;
-    text-align: left!important;
-    text-wrap: pretty!important;
+    text-align: justify!important;
+    text-align-last: left!important;
+    text-wrap: initial!important;
     line-height: 1.65!important;
     word-spacing: normal!important;
     letter-spacing: normal!important;
+    hyphens: auto!important;
+    overflow-wrap: normal!important;
   }
 }
