@@ -1127,19 +1127,19 @@
 }
 
 
-/* Equilíbrio visual do texto de abertura: distribuição uniforme entre as linhas. */
+/* Texto de abertura justificado nas duas margens, em desktop e mobile. */
 .site-shell .hero-sub{
   max-width: 590px!important;
-  text-wrap: balance!important;
-  text-align: left!important;
+  text-align: justify!important;
+  text-wrap: initial!important;
   line-height: 1.65!important;
 }
 .site-shell .hero-sub strong{display:inline!important;}
 @media(max-width:680px){
   .site-shell .hero-sub{
     max-width: 100%!important;
-    text-align: center!important;
-    text-wrap: balance!important;
+    text-align: justify!important;
+    text-wrap: initial!important;
     line-height: 1.65!important;
   }
 }
