@@ -1154,16 +1154,19 @@
   }
 }
 
-/* No mobile, mantém a identificação do professor em bloco para evitar espaços
-   exagerados da justificação; o restante parágrafo continua justificado. */
+/* Mobile: identificação do professor integrada ao parágrafo, sem quebra forçada. */
 @media(max-width:680px){
   .site-shell .hero-sub strong{
-    display:block!important;
-    text-align:left!important;
-    margin-bottom:2px!important;
+    display:inline!important;
+    font-size:1.02em!important;
+    letter-spacing:-.02em!important;
+    margin:0!important;
   }
   .site-shell .hero-sub{
     text-align:justify!important;
     text-align-last:left!important;
+    word-spacing:normal!important;
+    letter-spacing:normal!important;
+    line-height:1.6!important;
   }
 }
