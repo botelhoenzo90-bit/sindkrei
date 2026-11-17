@@ -1153,3 +1153,17 @@
     overflow-wrap: normal!important;
   }
 }
+
+/* No mobile, mantém a identificação do professor em bloco para evitar espaços
+   exagerados da justificação; o restante parágrafo continua justificado. */
+@media(max-width:680px){
+  .site-shell .hero-sub strong{
+    display:block!important;
+    text-align:left!important;
+    margin-bottom:2px!important;
+  }
+  .site-shell .hero-sub{
+    text-align:justify!important;
+    text-align-last:left!important;
+  }
+}
