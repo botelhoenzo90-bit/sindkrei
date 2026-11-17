@@ -140,7 +140,7 @@ function Index() {
           <div className="hero-copy">
             <span className="hero-kicker"><i/> MENTORIA COMPLETA · 2ª FASE OAB</span>
             <h1>Sua aprovação começa com <em>estratégia, prática e direção.</em></h1>
-            <p className="hero-sub"><strong>Direito do Trabalho com o <span className="nb">Prof. Sindkrei.</span></strong> Aprenda a estruturar cada peça, organizar seus argumentos e desenvolver respostas claras e completas. Treine com orientação prática, entenda o que a banca FGV espera e chegue à prova com mais segurança, estratégia e confiança.</p>
+            <p className="hero-sub"><strong>Direito do Trabalho com o <span className="nb">Prof. Sindkrei.</span></strong> Prepare-se para a 2ª fase da OAB com uma metodologia prática e direcionada ao que realmente importa na prova. Aprenda a identificar a peça adequada, compreender os fundamentos jurídicos, organizar seus argumentos e construir respostas claras, completas e bem estruturadas. Treine com exercícios orientados, desenvolva segurança na elaboração das peças e das questões discursivas e entenda como atender aos critérios de correção da banca FGV. Tenha mais estratégia, confiança e preparo para buscar sua aprovação.</p>
             <div className="hero-actions">
               <a className="btn btn-primary" href="#garantia">Quero me preparar com o Prof. Sindkrei <ArrowRight size={17}/></a>
               <a className="btn btn-outline" href="#garantia">Conhecer a mentoria <ChevronRight size={17}/></a>
