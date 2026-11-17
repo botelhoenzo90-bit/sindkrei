@@ -1127,11 +1127,11 @@
 }
 
 
-/* Texto de abertura retomando a versão original, com linhas justificadas e preenchimento natural. */
+/* Texto de abertura justificado, com espaçamento natural e última linha sem estiramento excessivo. */
 .site-shell .hero-sub{
   max-width: 590px!important;
   text-align: justify!important;
-  text-align-last: justify!important;
+  text-align-last: left!important;
   text-wrap: initial!important;
   line-height: 1.65!important;
   word-spacing: normal!important;
@@ -1144,7 +1144,7 @@
   .site-shell .hero-sub{
     max-width: 100%!important;
     text-align: justify!important;
-    text-align-last: justify!important;
+    text-align-last: left!important;
     text-wrap: initial!important;
     line-height: 1.65!important;
     word-spacing: normal!important;
