@@ -1127,19 +1127,23 @@
 }
 
 
-/* Texto de abertura justificado nas duas margens, em desktop e mobile. */
+/* Texto de abertura com leitura natural, sem espaços esticados entre palavras. */
 .site-shell .hero-sub{
   max-width: 590px!important;
-  text-align: justify!important;
-  text-wrap: initial!important;
+  text-align: left!important;
+  text-wrap: pretty!important;
   line-height: 1.65!important;
+  word-spacing: normal!important;
+  letter-spacing: normal!important;
 }
 .site-shell .hero-sub strong{display:inline!important;}
 @media(max-width:680px){
   .site-shell .hero-sub{
     max-width: 100%!important;
-    text-align: justify!important;
-    text-wrap: initial!important;
+    text-align: left!important;
+    text-wrap: pretty!important;
     line-height: 1.65!important;
+    word-spacing: normal!important;
+    letter-spacing: normal!important;
   }
 }
