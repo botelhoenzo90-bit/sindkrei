@@ -202,7 +202,6 @@ function Index() {
       <section className="reviews" id="avaliacoes"><div className="container">
         <SectionTitle eyebrow="Depoimentos reais" title="Histórias de quem trilhou esse caminho com o Prof. Sindkrei" text="Relatos enviados por alunos sobre suas experiências com as aulas e a preparação em Direito do Trabalho."/>
         <div className="video-testimonials" aria-roledescription="carrossel" aria-label="Depoimentos em vídeo">
-          <div className="video-testimonial-heading"><span>DEPOIMENTOS EM VÍDEO</span><span aria-live="polite">{activeVideo + 1} de {videoTestimonials.length}</span></div>
           <div className="video-testimonial-stage">
             <button type="button" className="video-testimonial-arrow" onClick={() => setActiveVideo((activeVideo - 1 + videoTestimonials.length) % videoTestimonials.length)} aria-label="Ver depoimento em vídeo anterior"><ChevronLeft size={27}/></button>
             <div className="video-testimonial-frame"><video key={currentVideo.src} src={currentVideo.src} poster={currentVideo.poster} controls playsInline preload="metadata" aria-label={currentVideo.label} /></div>
