@@ -20,3 +20,4 @@
 - [x] Adicionar as 5 aulas extras no fim do carrossel, depois do módulo 14.
 - [x] Tirar o selo "Aula grátis" da capa do Módulo Introdutório.
 - [x] Alinhar o texto de abertura: nome do professor inteiro na mesma linha e quebras equilibradas.
+- [x] Adicionar os 2 vídeos acima dos cartões de depoimentos, em carrossel com setas, e conferir no computador e no celular.

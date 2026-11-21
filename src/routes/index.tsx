@@ -23,6 +23,10 @@ import daviPhoto from "@/assets/testimonials/davi.png.asset.json";
 import biancaPhoto from "@/assets/testimonials/bianca.png.asset.json";
 import victorPhoto from "@/assets/testimonials/victor.png.asset.json";
 import alunaAprovadaPhoto from "@/assets/testimonials/aluna-aprovada.jpeg.asset.json";
+import depoimentoVideo1 from "@/assets/testimonials/depoimento-video-1.mp4.asset.json";
+import depoimentoVideo2 from "@/assets/testimonials/depoimento-video-2.mp4.asset.json";
+import depoimentoVideoPoster1 from "@/assets/testimonials/depoimento-video-1.jpg.asset.json";
+import depoimentoVideoPoster2 from "@/assets/testimonials/depoimento-video-2.jpg.asset.json";
 import sindkreiLogo from "@/assets/sindkrei-logotipo-branco.png.asset.json";
 import heroPhoto from "@/assets/sindkrei-apresentacao.jpg.asset.json";
 import professorPhoto from "@/assets/sindkrei-professor.jpg.asset.json";
@@ -105,6 +109,10 @@ const testimonialPhotos = [
   isabelaPhoto.url, daviPhoto.url, biancaPhoto.url, victorPhoto.url,
   alunaAprovadaPhoto.url,
 ];
+const videoTestimonials = [
+  { src: depoimentoVideo1.url, poster: depoimentoVideoPoster1.url, label: "Depoimento em vídeo 1" },
+  { src: depoimentoVideo2.url, poster: depoimentoVideoPoster2.url, label: "Depoimento em vídeo 2" },
+];
 const faqs = [
   ["Para qual área é a mentoria?", "A preparação é direcionada à 2ª fase do Exame da OAB na área de Direito do Trabalho."],
   ["O que está incluído na preparação?", "Você terá acesso à aula inaugural gratuita, 14 módulos de aulas, módulo extra com 5 aulas bônus, roteiros exclusivos, lives semanais, 3 simulados com correção individualizada e acervo de peças práticas e questões subjetivas."],
@@ -128,7 +136,9 @@ function SectionTitle({ eyebrow, title, text, light = false }: { eyebrow: string
 
 function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [activeVideo, setActiveVideo] = useState(0);
   const navLinks = [["A mentoria", "#mentoria"], ["Conteúdo", "#conteudo"], ["Diferenciais", "#diferenciais"], ["Avaliações", "#avaliacoes"], ["Garantia", "#garantia"]];
+  const currentVideo = videoTestimonials[activeVideo]!;
 
   return (
     <main className="site-shell">
@@ -191,6 +201,15 @@ function Index() {
 
       <section className="reviews" id="avaliacoes"><div className="container">
         <SectionTitle eyebrow="Depoimentos reais" title="Histórias de quem trilhou esse caminho com o Prof. Sindkrei" text="Relatos enviados por alunos sobre suas experiências com as aulas e a preparação em Direito do Trabalho."/>
+        <div className="video-testimonials" aria-roledescription="carrossel" aria-label="Depoimentos em vídeo">
+          <div className="video-testimonial-heading"><span>DEPOIMENTOS EM VÍDEO</span><span aria-live="polite">{activeVideo + 1} de {videoTestimonials.length}</span></div>
+          <div className="video-testimonial-stage">
+            <button type="button" className="video-testimonial-arrow" onClick={() => setActiveVideo((activeVideo - 1 + videoTestimonials.length) % videoTestimonials.length)} aria-label="Ver depoimento em vídeo anterior"><ChevronLeft size={27}/></button>
+            <div className="video-testimonial-frame"><video key={currentVideo.src} src={currentVideo.src} poster={currentVideo.poster} controls playsInline preload="metadata" aria-label={currentVideo.label} /></div>
+            <button type="button" className="video-testimonial-arrow" onClick={() => setActiveVideo((activeVideo + 1) % videoTestimonials.length)} aria-label="Ver próximo depoimento em vídeo"><ChevronRight size={27}/></button>
+          </div>
+          <div className="video-testimonial-dots">{videoTestimonials.map((video, i) => <button type="button" key={video.src} className={activeVideo === i ? "active" : ""} onClick={() => setActiveVideo(i)} aria-label={`Ir para o depoimento em vídeo ${i + 1}`} aria-current={activeVideo === i ? "true" : undefined}/>)}</div>
+        </div>
         <div className="testimonial-carousel"><div className="testimonial-track">{[0,1].map((copy)=><div className="testimonial-group" key={copy} aria-hidden={copy===1}>{testimonials.map(([name,review],i)=><article className="testimonial-card" key={`${copy}-${name}`}><div className="testimonial-stars">★★★★★</div><p className="testimonial-review">“{review}”</p><div className="testimonial-author"><div className="testimonial-photo-placeholder"><img className="testimonial-photo" src={testimonialPhotos[i]} alt={`Foto de ${name}`} loading="lazy" /></div><div className="testimonial-author-name"><strong>{name}</strong><small>Aluna da mentoria</small></div></div></article>)}</div>)}</div></div><div className="section-cta"><a className="btn btn-dark" href="#garantia">Quero conhecer a mentoria <ArrowRight size={16}/></a></div>
       </div></section>
 
